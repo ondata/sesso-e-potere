@@ -14,6 +14,8 @@ mkdir -p "$folder"/../../dati/"$nome"/processing
 
 URL="https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica"
 
+find "$folder"/../../dati/amministazioni-italiane/processing -type f -iname "tmp*" -delete
+
 # scarica lista file
 curl "$URL" \
   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36' \
@@ -45,8 +47,17 @@ rm "$folder"/../../dati/"$nome"/processing/tmp.jsonl
 
 rm "$folder"/../../dati/"$nome"/rawdata/"$nome".jsonl
 
-find  "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
+# normalizza file CSV non provinciali
+find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
   echo "$line"
   nomefile=$(basename "$line" .csv)
   frictionless extract --field-type TEXT --csv --buffer-size 250000 "$line" >"$folder"/../../dati/"$nome"/processing/"$nomefile".csv
+done
+
+# aggiungi i codici elettorali comuni ai dati di tipo comunale e poi fai JOIN per aggiungere codici comunali ISTAT
+grep -lr --include=\*.csv "$folder"/../../dati/amministazioni-italiane/processing -e 'codice_comune' | while read line; do
+  echo "$line"
+  mlr -I --csv put -S '$comune=$codice_regione.$codice_provincia.$codice_comune' "$line"
+  mlr --csv join --ul -j comune -f "$line" then unsparsify "$folder"/../../dati/"$nome"/risorse/comuni.csv >"$folder"/tmp.csv
+  mv "$folder"/tmp.csv "$line"
 done
