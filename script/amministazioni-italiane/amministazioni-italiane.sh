@@ -68,7 +68,7 @@ grep -lr --include=\*.csv "$folder"/../../dati/amministazioni-italiane/processin
 done
 
 
-# estrai elenco comuni non presenti
+# estrai elenco comuni non presenti in Amministratori locali e regionali in carica"
 mlr --csv cut -f comune then uniq -a "$folder"/../../dati/"$nome"/processing/ammcom.csv >"$folder"/tmp.csv
 
 mlr --csv join --ul --np -j comune -f "$folder"/../../dati/"$nome"/risorse/codici_comuni.csv then unsparsify then uniq -a "$folder"/tmp.csv >"$folder"/../../dati/"$nome"/report/ammcom-non-presenti.csv
