@@ -11,6 +11,7 @@ folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 mkdir -p "$folder"/../../dati/"$nome"/rawdata
 mkdir -p "$folder"/../../dati/"$nome"/processing
+mkdir -p "$folder"/../../dati/"$nome"/report
 
 URL="https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica"
 
@@ -65,3 +66,13 @@ grep -lr --include=\*.csv "$folder"/../../dati/amministazioni-italiane/processin
   mlr --csv join --ul -j comune -f "$line" then unsparsify "$folder"/../../dati/"$nome"/risorse/comuni.csv >"$folder"/tmp.csv
   mv "$folder"/tmp.csv "$line"
 done
+
+
+# estrai elenco comuni non presenti
+mlr --csv cut -f comune then uniq -a "$folder"/../../dati/"$nome"/processing/ammcom.csv >"$folder"/tmp.csv
+
+mlr --csv join --ul --np -j comune -f "$folder"/../../dati/"$nome"/risorse/codici_comuni.csv then unsparsify then uniq -a "$folder"/tmp.csv >"$folder"/../../dati/"$nome"/report/ammcom-non-presenti.csv
+
+if [ -f >"$folder"/tmp.csv ]; then
+  rm "$folder"/tmp.csv
+fi

@@ -10,7 +10,7 @@
 
 ## Non sono presenti i dati su tutti i comuni di Italia
 
-Ci sono 7.565 su 7.904.
+Ci sono 7.565 su 7.904. Mancano i comuni elencati in [questo file](report/ammcom-non-presenti.csv).
 
 ## Titolo pagina
 
