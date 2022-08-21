@@ -1,9 +1,15 @@
 - [Note per il Dipartimento per gli Affari Interni e Territoriali](#note-per-il-dipartimento-per-gli-affari-interni-e-territoriali)
+  - [Non sono presenti i dati su tutti i comuni di Italia](#non-sono-presenti-i-dati-su-tutti-i-comuni-di-italia)
   - [Titolo pagina](#titolo-pagina)
   - [Dichiarare l'encoding](#dichiarare-lencoding)
   - [I file CSV non hanno una sintassi corretta](#i-file-csv-non-hanno-una-sintassi-corretta)
+  - [Formato campi da cambiare in ISO 8601](#formato-campi-da-cambiare-in-iso-8601)
 
 # Note per il Dipartimento per gli Affari Interni e Territoriali
+
+## Non sono presenti i dati su tutti i comuni di Italia
+
+Ci sono 7.565 su 7.904.
 
 ## Titolo pagina
 
@@ -35,3 +41,7 @@ mentre dovrebbe essere
 ```
 "LISTA CIVICA | ""SAINT-OYEN - TRAVAILLI EUNSEMBLO"""
 ```
+
+## Formato campi da cambiare in ISO 8601
+
+Al momento sono `gg/mm/aaaa` (ad esempio "25/03/2019"). I campi date sono di grande interesse e ottimizzarli in formato `AAAA-MM-DD` (ad esempio "2019-03-25") è molto preferibile.
