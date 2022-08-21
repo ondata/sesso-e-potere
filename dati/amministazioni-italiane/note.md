@@ -17,8 +17,7 @@ Ci sono 7.565 su 7.904. Mancano i comuni elencati in [questo file](report/ammcom
 
 Al momento è "Amministratori locali e regionali in carica".
 
-
-Cambiarlo in "Amministratori e Amministratici locali e regionali in carica".
+Si dovrebbe cambiare in "Amministratori e Amministratici locali e regionali in carica", o in "Cariche amministrative locali e regionali".
 
 ## Dichiarare l'encoding
 
