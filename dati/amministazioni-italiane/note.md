@@ -5,6 +5,7 @@
   - [I file CSV non hanno una sintassi corretta](#i-file-csv-non-hanno-una-sintassi-corretta)
   - [Formato campi da cambiare in ISO 8601](#formato-campi-da-cambiare-in-iso-8601)
   - [Il file "Amministratori comunali della Provincia Agrigento" non è scaricabile](#il-file-amministratori-comunali-della-provincia-agrigento-non-è-scaricabile)
+  - [Record che dovrebbero essere rimossi](#record-che-dovrebbero-essere-rimossi)
 
 # Note per il Dipartimento per gli Affari Interni e Territoriali
 
@@ -50,3 +51,9 @@ Al momento sono `gg/mm/aaaa` (ad esempio "25/03/2019"). I campi date sono di gra
 ## Il file "Amministratori comunali della Provincia Agrigento" non è scaricabile
 
 Il file [`provincia_di_agrigento.zip`](https://dait.interno.gov.it/documenti/provincia_di_agrigento.zip) elencato nella [pagina principale](https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica), non è scaricabile.
+
+## Record che dovrebbero essere rimossi
+
+In alcuni casi, come nel file [`sindaciincarica.csv`](https://dait.interno.gov.it/documenti/sindaciincarica.csv), etichettato sul sito principale come "Sindaci", ci sono due record per lo stesso comune (`PETTORANELLO DEL MOLISE`, Codice ISTAT "094034"). Sono quelli i carica, quindi dovrebbe rimanere in lista soltanto quello data di elezione più recente.
+
+Lo stesso per il file [`ammcom.csv`](https://dait.interno.gov.it/documenti/ammcom.csv), etichettato come "Amministratori comunali", in cui per alcuni comuni ci sono più di due date di elezione.

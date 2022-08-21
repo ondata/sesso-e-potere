@@ -76,3 +76,6 @@ mlr --csv join --ul --np -j comune -f "$folder"/../../dati/"$nome"/risorse/codic
 if [ -f >"$folder"/tmp.csv ]; then
   rm "$folder"/tmp.csv
 fi
+
+# estrai comuni, che per la stessa carica hanno due date di elezione diverse
+mlr --csv uniq -f comune,data_elezione,descrizione_carica then count-similar -o conteggio -g comune,descrizione_carica then filter '$conteggio>1' then sort -f  comune,descrizione_carica,data_elezione then cut -x -f conteggio then reorder -f comune,descrizione_carica,data_elezione "$folder"/../../dati/"$nome"/processing/ammcom.csv >"$folder"/../../dati/"$nome"/report/comuni-cariche-duplicate-data.csv
