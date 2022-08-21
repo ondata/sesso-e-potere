@@ -14,6 +14,7 @@ mkdir -p "$folder"/../../dati/"$nome"/processing
 
 URL="https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica"
 
+# cancella eventuali file temporanei
 find "$folder"/../../dati/amministazioni-italiane/processing -type f -iname "tmp*" -delete
 
 # scarica lista file
@@ -23,7 +24,7 @@ curl "$URL" \
 
 cd "$folder"/../../dati/"$nome"/rawdata/
 
-# scarica file
+# scarica file. Se impostato a "sì", scarica di nuovi i dati grezzi dalla sorgente
 scaricadati="no"
 if [ $scaricadati = "sì" ]; then
   jq <"$folder"/../../dati/amministazioni-italiane/rawdata/amministazioni-italiane.jsonl -r '."@href"' | grep -v 'provincia_di_agrigento.zip' | while read line; do
@@ -31,23 +32,26 @@ if [ $scaricadati = "sì" ]; then
   done
 fi
 
+# elimina file temporaneo usato per fare dopo il merge dei dati raggruppati per provincia
 if [ -f "$folder"/../../dati/"$nome"/processing/tmp.jsonl ]; then
   rm "$folder"/../../dati/"$nome"/processing/tmp.jsonl
 fi
 
+# raggruppa in unico file JSON Lines i dati grezzi comunali raggruppati per provincia
 find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
   echo "$line"
   nomefile=$(basename "$line" .csv)
   tail <"$line" -n +3 | mlrgo --icsv --ojsonl --ragged --ifs ";" put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
 done
 
+# coverti il file JSON Lines in un file CSV
 mlrgo --ijsonl --ocsv unsparsify "$folder"/../../dati/"$nome"/processing/tmp.jsonl >"$folder"/../../dati/"$nome"/processing/file-provinciali.csv
 
+# cancella file non più utili
 rm "$folder"/../../dati/"$nome"/processing/tmp.jsonl
-
 rm "$folder"/../../dati/"$nome"/rawdata/"$nome".jsonl
 
-# normalizza file CSV non provinciali
+# normalizza file CSV non provinciali (encoding UTF-8, separatore ",", rimuovi intestazioni ridondanti)
 find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
   echo "$line"
   nomefile=$(basename "$line" .csv)

@@ -4,6 +4,7 @@
   - [Dichiarare l'encoding](#dichiarare-lencoding)
   - [I file CSV non hanno una sintassi corretta](#i-file-csv-non-hanno-una-sintassi-corretta)
   - [Formato campi da cambiare in ISO 8601](#formato-campi-da-cambiare-in-iso-8601)
+  - [Il file "Amministratori comunali della Provincia Agrigento" non è scaricabile](#il-file-amministratori-comunali-della-provincia-agrigento-non-è-scaricabile)
 
 # Note per il Dipartimento per gli Affari Interni e Territoriali
 
@@ -45,3 +46,7 @@ mentre dovrebbe essere
 ## Formato campi da cambiare in ISO 8601
 
 Al momento sono `gg/mm/aaaa` (ad esempio "25/03/2019"). I campi date sono di grande interesse e ottimizzarli in formato `AAAA-MM-DD` (ad esempio "2019-03-25") è molto preferibile.
+
+## Il file "Amministratori comunali della Provincia Agrigento" non è scaricabile
+
+Il file [`provincia_di_agrigento.zip`](https://dait.interno.gov.it/documenti/provincia_di_agrigento.zip) elencato nella [pagina principale](https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica), non è scaricabile.
