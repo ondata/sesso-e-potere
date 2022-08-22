@@ -13,7 +13,7 @@ Info generali:
 
 - formato: `CSV`
 - separatore di campo: `;`
-- *encoding*: `iso8859-1` (non è un'informazione presente a monte, è derivata in modo automatico)
+- *encoding*: `ISO8859-1` (non è un'informazione presente a monte, è derivata in modo automatico)
 - righe di intestazione superflue: le prime due
 
 # Dati elaborati
@@ -23,7 +23,7 @@ I file grezzi presenti in [`raw`](rawdata) sono stati elaborati e resi disponibi
 Queste le modifiche fatte:
 
 - cambiato separatore di campo da `;` a `,`;
-- cambiato *encoding* da `iso8859-1` a `utf-8`;
+- cambiato *encoding* da `ISO8859-1` a `UTF-8`;
 - corretta sintassi di celle con `"` all'interno (vedi [note](note.md#i-file-csv-non-hanno-una-sintassi-corretta));
 - rimosse righe di intestazioni superflue;
 - per il file `ammcom.csv`, con i dati comunali, aggiunte le colonne `data_elezione_ISO` e `data_entrata_in_carica_ISO` in formato `YYYY-MM-DD`;
