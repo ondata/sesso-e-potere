@@ -92,8 +92,8 @@ fi
 # estrai comuni, che per la stessa carica hanno due date di elezione diverse
 mlr --csv uniq -f comune,data_elezione,descrizione_carica then count-similar -o conteggio -g comune,descrizione_carica then filter '$conteggio>1' then sort -f  comune,descrizione_carica,data_elezione then cut -x -f conteggio then reorder -f comune,descrizione_carica,data_elezione "$folder"/../../dati/"$nome"/processing/ammcom.csv >"$folder"/../../dati/"$nome"/report/comuni-cariche-duplicate-data.csv
 
-# aggiungere colonne date in formato ISO 8601 per i dati comunali
-
-for i in ammcom.csv file-provinciali.csv; do
-  mlr -I --csv put '$data_elezione_ISO=strftime(strptime($data_elezione, "%d/%m/%Y"),"%Y-%m-%d");$data_entrata_in_carica_ISO=strftime(strptime($data_entrata_in_carica, "%d/%m/%Y"),"%Y-%m-%d")' "$folder"/../../dati/"$nome"/processing/"$i"
+# aggiungere colonne date in formato ISO 8601 per data_elezione, e data_entrata_in_carica
+grep -lr --include=\*.csv "$folder"/../../dati/amministazioni-italiane/processing -e 'data_elezione,data_entrata_in_carica' | while read line; do
+  echo "$line"
+  mlr -I --csv put '$data_elezione_ISO=strftime(strptime($data_elezione, "%d/%m/%Y"),"%Y-%m-%d");$data_entrata_in_carica_ISO=strftime(strptime($data_entrata_in_carica, "%d/%m/%Y"),"%Y-%m-%d")' "$line"
 done
