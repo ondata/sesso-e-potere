@@ -16,6 +16,8 @@ Info generali:
 - *encoding*: `ISO8859-1` (non è un'informazione presente a monte, è derivata in modo automatico)
 - righe di intestazione superflue: le prime due
 
+La lista dei file, con i metadati relativi, è nel file [`lista-file.csv`](risorse/lista-file.csv).
+
 # Dati elaborati
 
 I file grezzi presenti in [`raw`](rawdata) sono stati elaborati e resi disponibili nella cartella [`processing`](processing).
