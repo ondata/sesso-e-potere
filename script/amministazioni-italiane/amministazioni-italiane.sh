@@ -52,12 +52,24 @@ mlrgo --ijsonl --ocsv unsparsify "$folder"/../../dati/"$nome"/processing/tmp.jso
 rm "$folder"/../../dati/"$nome"/processing/tmp.jsonl
 rm "$folder"/../../dati/"$nome"/rawdata/"$nome".jsonl
 
+if [ -f "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl ];then
+  rm "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl
+fi
+
 # normalizza file CSV non provinciali (encoding UTF-8, separatore ",", rimuovi intestazioni ridondanti)
 find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
   echo "$line"
+  titolo=$(cat "$line" | sed -n '1p')
+  note=$(cat "$line" | sed -n '2p')
   nomefile=$(basename "$line" .csv)
   frictionless extract --field-type TEXT --csv --buffer-size 250000 "$line" >"$folder"/../../dati/"$nome"/processing/"$nomefile".csv
+  echo '{"nomefile":"'"$nomefile"'","titolo":"'"$titolo"'","note":"'"$note"'"}' >>"$folder"/../../dati/"$nome"/risorse/lista-file.jsonl
 done
+
+mlr --j2c clean-whitespace "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl>"$folder"/../../dati/"$nome"/risorse/lista-file.csv
+if [ -f "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl ];then
+  rm "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl
+fi
 
 # aggiungi i codici elettorali comuni ai dati di tipo comunale e poi fai JOIN per aggiungere codici comunali ISTAT
 grep -lr --include=\*.csv "$folder"/../../dati/amministazioni-italiane/processing -e 'codice_comune' | while read line; do
