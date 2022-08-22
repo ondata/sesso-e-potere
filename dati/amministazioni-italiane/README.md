@@ -26,6 +26,7 @@ Queste le modifiche fatte:
 - cambiato *encoding* da `iso8859-1` a `utf-8`;
 - corretta sintassi di celle con `"` all'interno (vedi [note](note.md#i-file-csv-non-hanno-una-sintassi-corretta));
 - rimosse righe di intestazioni superflue;
+- per il file `ammcom.csv`, con i dati comunali, aggiunte le colonne `data_elezione_ISO` e `data_entrata_in_carica_ISO` in formato `YYYY-MM-DD`;
 
 # Note
 
