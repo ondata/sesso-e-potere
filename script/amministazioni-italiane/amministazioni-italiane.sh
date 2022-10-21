@@ -44,7 +44,7 @@ fi
 find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
   echo "$line"
   nomefile=$(basename "$line" .csv)
-  tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 | mlrgo --icsv --ojsonl --ragged --ifs ";" put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
+  tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 | mlrgo --icsv --ojsonl --ragged --ifs ";" --no-auto-unflatten put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
 done
 
 # coverti il file JSON Lines in un file CSV
