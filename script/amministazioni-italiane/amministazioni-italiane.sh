@@ -44,11 +44,11 @@ fi
 find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
   echo "$line"
   nomefile=$(basename "$line" .csv)
-  tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 | mlrgo --icsv --ojsonl --ragged --ifs ";" --no-auto-unflatten put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
+  tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 | grep -v -E "^70;VIPITENO;BZ;6390" | grep -v -E "^;CN;777;;CANDELLERO;FEDERICO" | mlrgo --icsv --ojsonl --ragged --ifs ";"  put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
 done
 
 # coverti il file JSON Lines in un file CSV
-mlrgo --ijsonl --ocsv unsparsify "$folder"/../../dati/"$nome"/processing/tmp.jsonl >"$folder"/../../dati/"$nome"/processing/file-provinciali.csv
+mlrgo --ijsonl --ocsv --no-auto-flatten unsparsify  "$folder"/../../dati/"$nome"/processing/tmp.jsonl >"$folder"/../../dati/"$nome"/processing/file-provinciali.csv
 
 # cancella file non più utili
 rm "$folder"/../../dati/"$nome"/processing/tmp.jsonl
@@ -97,5 +97,5 @@ mlr --csv uniq -f comune,data_elezione,descrizione_carica then count-similar -o 
 # aggiungere colonne date in formato ISO 8601 per data_elezione, e data_entrata_in_carica
 grep -lr --include=\*.csv "$folder"/../../dati/amministazioni-italiane/processing -e 'data_elezione,data_entrata_in_carica' | while read line; do
   echo "$line"
-  mlr -I --csv put '$data_elezione_ISO=strftime(strptime($data_elezione, "%d/%m/%Y"),"%Y-%m-%d");$data_entrata_in_carica_ISO=strftime(strptime($data_entrata_in_carica, "%d/%m/%Y"),"%Y-%m-%d")' "$line"
+  mlr -I --csv filter -S '$data_elezione=~"[0-9]+/[0-9]+"' then put '$data_elezione_ISO=strftime(strptime($data_elezione, "%d/%m/%Y"),"%Y-%m-%d");$data_entrata_in_carica_ISO=strftime(strptime($data_entrata_in_carica, "%d/%m/%Y"),"%Y-%m-%d")' "$line"
 done
