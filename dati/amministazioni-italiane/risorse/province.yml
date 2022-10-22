@@ -58,26 +58,25 @@ schema:
         enum:
           - M
           - F
-    - type: string
+    - type: date
       name: data_nascita
-      constraints:
-        pattern: ^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$
+      format: "%d/%m/%Y"
     - type: string
       name: luogo_nascita
     - type: string
       name: descrizione_carica
       constraints:
         required: true
-    - type: string
+    - type: date
       name: data_elezione
+      format: "%d/%m/%Y"
       constraints:
         required: true
-        pattern: ^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$
-    - type: string
+    - type: date
       name: data_entrata_in_carica
+      format: "%d/%m/%Y"
       constraints:
         required: true
-        pattern: ^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$
     - type: string
       name: partito
     - type: string
