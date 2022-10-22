@@ -29,11 +29,11 @@ cd "$folder"/../../dati/"$nome"/rawdata/
 # scarica file. Se impostato a "sì", scarica di nuovi i dati grezzi dalla sorgente
 scaricadati="no"
 if [ $scaricadati = "sì" ]; then
+  find "$folder"/../../dati/amministazioni-italiane/rawdata/ -maxdepth 1 -iname "*.csv" -type f -delete
   jq <"$folder"/../../dati/amministazioni-italiane/rawdata/amministazioni-italiane.jsonl -r '."@href"' | grep -v 'provincia_di_agrigento.zip' | while read line; do
     wget -c --header="User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17" "$line"
   done
 fi
-
 
 # elimina file temporaneo usato per fare dopo il merge dei dati raggruppati per provincia
 if [ -f "$folder"/../../dati/"$nome"/processing/tmp.jsonl ]; then
