@@ -12,6 +12,7 @@ folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 mkdir -p "$folder"/../../dati/"$nome"/rawdata
 mkdir -p "$folder"/../../dati/"$nome"/processing
 mkdir -p "$folder"/../../dati/"$nome"/report
+mkdir -p "$folder"/tmp
 
 URL="https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica"
 
@@ -44,7 +45,9 @@ fi
 find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
   echo "$line"
   nomefile=$(basename "$line" .csv)
-  tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 | grep -v -E "^70;VIPITENO;BZ;6390" | grep -v -E "^;CN;777;;CANDELLERO;FEDERICO" | mlrgo --icsv --ojsonl --ragged --ifs ";"  put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
+  frictionless extract --csv --valid "$folder"/../../dati/amministazioni-italiane/risorse/province.yml --basepath "$folder"/../../dati/amministazioni-italiane/rawdata --path "$nomefile".csv | mlrgo --icsv --ojsonl --jvquoteall cat  >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
+  #tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 | grep -v -E "^70;VIPITENO;BZ;6390" | grep -v -E "^;CN;777;;CANDELLERO;FEDERICO" | mlrgo --icsv --ojsonl --ragged --ifs ";"  put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
+  #tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 |  mlrgo --icsv --ojsonl --ragged --ifs ";"  put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
 done
 
 # coverti il file JSON Lines in un file CSV
@@ -97,5 +100,7 @@ mlr --csv uniq -f comune,data_elezione,descrizione_carica then count-similar -o 
 # aggiungere colonne date in formato ISO 8601 per data_elezione, e data_entrata_in_carica
 grep -lr --include=\*.csv "$folder"/../../dati/amministazioni-italiane/processing -e 'data_elezione,data_entrata_in_carica' | while read line; do
   echo "$line"
+  name=$(basename "$line" .csv)
+  mlr --csv filter -S -x '$data_elezione=~"[0-9]+/[0-9]+"' "$line" >"$folder"/tmp/tmp-"$name"-errors.csv
   mlr -I --csv filter -S '$data_elezione=~"[0-9]+/[0-9]+"' then put '$data_elezione_ISO=strftime(strptime($data_elezione, "%d/%m/%Y"),"%Y-%m-%d");$data_entrata_in_carica_ISO=strftime(strptime($data_entrata_in_carica, "%d/%m/%Y"),"%Y-%m-%d")' "$line"
 done
