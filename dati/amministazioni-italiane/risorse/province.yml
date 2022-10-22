@@ -1,0 +1,91 @@
+# --------
+# metadata: rawdata/provincia_di_ancona.csv
+# --------
+
+path: rawdata/provincia_di_ancona.csv
+encoding: iso8859-1
+name: provincia_di_ancona
+profile: tabular-data-resource
+scheme: file
+format: csv
+hashing: md5
+dialect:
+  delimiter: ;
+  skipInitialSpace: true
+layout:
+  headerRows:
+    - 3
+schema:
+  missingValues:
+    - ""
+  fields:
+    - type: string
+      name: codice_regione
+      constraints:
+        required: true
+        pattern: ^[0-9]{2}$
+    - type: string
+      name: codice_provincia
+      constraints:
+        required: true
+        pattern: ^[0-9]{3}$
+    - type: string
+      name: codice_comune
+      constraints:
+        required: true
+        pattern: ^[0-9]{4}$
+    - type: string
+      name: denominazione_comune
+      constraints:
+        required: true
+    - type: string
+      name: sigla_provincia
+      constraints:
+        required: true
+    - type: integer
+      name: popolazione_censita
+      constraints:
+        required: true
+    - type: string
+      name: titolo_accademico
+    - type: string
+      name: cognome
+      constraints:
+        required: true
+    - type: string
+      name: nome
+      constraints:
+        required: true
+    - type: string
+      name: sesso
+      constraints:
+        enum:
+          - M
+          - F
+    - type: string
+      name: data_nascita
+      constraints:
+        pattern: ^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$
+    - type: string
+      name: luogo_nascita
+    - type: string
+      name: descrizione_carica
+      constraints:
+        required: true
+    - type: string
+      name: data_elezione
+      constraints:
+        required: true
+        pattern: ^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$
+    - type: string
+      name: data_entrata_in_carica
+      constraints:
+        required: true
+        pattern: ^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$
+    - type: string
+      name: partito
+    - type: string
+      name: titolo_studio
+    - type: string
+      name: professione
+
