@@ -39,12 +39,19 @@ find "$folder"/tmp/ -maxdepth 1 -iname "prov*.json" -type f -print0 | while IFS=
   fi
 done
 
-# nella lista errori, estrai righe univoche
-mlr -I --json uniq -a "$folder"/tmp/errors-list.jsonl
+# se sono stati trovati errori, crea report
+if [ -f "$folder"/tmp/errors-list.jsonl ]; then
+  echo "ERRORE: sono stati trovati errori nei CSV provinciali"
+  # nella lista errori, estrai righe univoche
+  mlr -I --json uniq -a "$folder"/tmp/errors-list.jsonl
 
-cp "$folder"/tmp/errors-list.jsonl "$folder"/../../dati/"$nome"/report/province-errors-list.jsonl
+  cp "$folder"/tmp/errors-list.jsonl "$folder"/../../dati/"$nome"/report/province-errors-list.jsonl
 
-URL="https://github.com/ondata/sesso-e-potere/blob/main/dati/amministazioni-italiane/rawdata/"
+  URL="https://github.com/ondata/sesso-e-potere/blob/main/dati/amministazioni-italiane/rawdata/"
 
-# crea file markdown lista errori
-mlr --j2m put '$file="[".$file."]('$URL'".$file.".csv#L".$rowPosition.")"' "$folder"/tmp/errors-list.jsonl >"$folder"/../../dati/"$nome"/report/province-errors-list.md
+  # crea file markdown lista errori
+  mlr --j2m put '$file="[".$file."]('$URL'".$file.".csv#L".$rowPosition.")"' "$folder"/tmp/errors-list.jsonl >"$folder"/../../dati/"$nome"/report/province-errors-list.md
+# se non ne hai trovati, cancella i file di report
+else
+  find "$folder"/../../dati/"$nome"/report/ -maxdepth 1 -iname "*errors-list*" -type f -delete
+fi
