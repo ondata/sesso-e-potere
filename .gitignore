@@ -2,3 +2,10 @@ tmp*
 .~lock*
 tmp/*
 #dati/amministazioni-italiane/rawdata/provincia_di_*.csv
+
+
+dati/amministazioni-italiane/report/report_files/*
+dati/amministazioni-italiane/report/style.css
+dati/amministazioni-italiane/report/report.html
+dati/amministazioni-italiane/report/report.qmd
+.Rhistory
