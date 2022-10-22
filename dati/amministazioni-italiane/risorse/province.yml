@@ -1,10 +1,6 @@
-# --------
-# metadata: rawdata/provincia_di_ancona.csv
-# --------
-
-path: rawdata/provincia_di_ancona.csv
+path: rawdata/input.csv
 encoding: iso8859-1
-name: provincia_di_ancona
+name: provincia
 profile: tabular-data-resource
 scheme: file
 format: csv
