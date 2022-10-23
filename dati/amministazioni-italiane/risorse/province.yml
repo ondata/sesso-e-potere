@@ -17,6 +17,7 @@ schema:
   fields:
     - type: string
       name: codice_regione
+      description: "Il codice regione secondo la classificazione ISTAT ...."
       constraints:
         required: true
         pattern: ^[0-9]{2}$
@@ -54,13 +55,16 @@ schema:
         required: true
     - type: string
       name: sesso
+      description: "Solo due valori ammmessi. M = Maschio, F = Femmina"
       constraints:
         enum:
           - M
           - F
     - type: date
       name: data_nascita
+      description: "La data di nascita in formato giorno/mese/anno"
       format: "%d/%m/%Y"
+      example: "22/01/1970"
     - type: string
       name: luogo_nascita
     - type: string
