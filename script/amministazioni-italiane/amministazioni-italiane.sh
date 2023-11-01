@@ -45,7 +45,9 @@ fi
 find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
   echo "$line"
   nomefile=$(basename "$line" .csv)
-  frictionless extract --csv --valid "$folder"/../../dati/amministazioni-italiane/risorse/province.yml --basepath "$folder"/../../dati/amministazioni-italiane/rawdata --path "$nomefile".csv | mlrgo --icsv --ojsonl --jvquoteall cat  >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
+  #frictionless extract --csv --valid "$folder"/../../dati/amministazioni-italiane/risorse/province.yml --basepath "$folder"/../../dati/amministazioni-italiane/rawdata --path "$nomefile".csv | mlrgo --icsv --ojsonl --jvquoteall cat  >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
+
+  iconv -f ISO-8859-1 -t utf-8 "$folder"/../../dati/amministazioni-italiane/rawdata/"$nomefile".csv  |  tail -n +3 | mlrgo --icsv --ojsonl --fs ";" --jvquoteall -S --ragged cat >> "$folder"/../../dati/"$nome"/processing/tmp.jsonl
   #tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 | grep -v -E "^70;VIPITENO;BZ;6390" | grep -v -E "^;CN;777;;CANDELLERO;FEDERICO" | mlrgo --icsv --ojsonl --ragged --ifs ";"  put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
   #tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 |  mlrgo --icsv --ojsonl --ragged --ifs ";"  put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
 done
@@ -64,10 +66,11 @@ fi
 # normalizza file CSV non provinciali (encoding UTF-8, separatore ",", rimuovi intestazioni ridondanti)
 find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
   echo "$line"
-  titolo=$(cat "$line" | sed -n '1p')
-  note=$(cat "$line" | sed -n '2p')
+  titolo=$(cat "$line" | sed -n '1p' | tr -d '\r')
+  note=$(cat "$line" | sed -n '2p' | tr -d '\r')
   nomefile=$(basename "$line" .csv)
-  frictionless extract --field-type TEXT --csv --buffer-size 250000 "$line" >"$folder"/../../dati/"$nome"/processing/"$nomefile".csv
+  #frictionless extract --field-type TEXT --csv --buffer-size 250000 "$line" >"$folder"/../../dati/"$nome"/processing/"$nomefile".csv
+  iconv -f ISO-8859-1 -t utf-8 "$line" |  tail -n +3 | mlrgo --csv --ifs ";" -S --ragged remove-empty-columns >"$folder"/../../dati/"$nome"/processing/"$nomefile".csv
   echo '{"nomefile":"'"$nomefile"'","titolo":"'"$titolo"'","note":"'"$note"'"}' >>"$folder"/../../dati/"$nome"/risorse/lista-file.jsonl
 done
 
@@ -79,10 +82,11 @@ fi
 # aggiungi i codici elettorali comuni ai dati di tipo comunale e poi fai JOIN per aggiungere codici comunali ISTAT
 grep -lr --include=\*.csv "$folder"/../../dati/amministazioni-italiane/processing -e 'codice_comune' | while read line; do
   echo "$line"
-  mlr -I --csv put -S '$comune=$codice_regione.$codice_provincia.$codice_comune' "$line"
+  mlr -I --csv remove-empty-columns then put -S '$comune=$codice_regione.$codice_provincia.$codice_comune' "$line"
   mlr --csv join --ul -j comune -f "$line" then unsparsify "$folder"/../../dati/"$nome"/risorse/comuni.csv >"$folder"/tmp.csv
   mv "$folder"/tmp.csv "$line"
 done
+
 
 
 # estrai elenco comuni non presenti in Amministratori locali e regionali in carica"
@@ -93,6 +97,7 @@ mlr --csv join --ul --np -j comune -f "$folder"/../../dati/"$nome"/risorse/codic
 if [ -f >"$folder"/tmp.csv ]; then
   rm "$folder"/tmp.csv
 fi
+
 
 # estrai comuni, che per la stessa carica hanno due date di elezione diverse
 mlr --csv uniq -f comune,data_elezione,descrizione_carica then count-similar -o conteggio -g comune,descrizione_carica then filter '$conteggio>1' then sort -f  comune,descrizione_carica,data_elezione then cut -x -f conteggio then reorder -f comune,descrizione_carica,data_elezione "$folder"/../../dati/"$nome"/processing/ammcom.csv >"$folder"/../../dati/"$nome"/report/comuni-cariche-duplicate-data.csv
