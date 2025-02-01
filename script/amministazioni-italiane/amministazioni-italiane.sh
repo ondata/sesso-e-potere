@@ -49,6 +49,11 @@ find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f -iname "prov*
   nomefile=$(basename "$line" .csv)
 
   encoding=$(chardetect --minimal "$line")
+  
+  # Normalize encoding names
+  if [[ "${encoding,,}" == "macroman" ]]; then
+    encoding="macintosh"
+  fi
 
   if [[ "${encoding,,}" == "utf-8" || "${encoding,,}" == "ascii" ]]; then
     cat "$folder"/../../dati/amministazioni-italiane/rawdata/"$nomefile".csv | tail -n +3 | mlrgo --icsv --ojsonl --fs ";" --jvquoteall -S --ragged cat >> "$folder"/../../dati/"$nome"/processing/tmp.jsonl
@@ -76,6 +81,11 @@ find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "pro
   nomefile=$(basename "$line" .csv)
   encoding=$(chardetect --minimal "$line")
   
+  # Normalize encoding names
+  if [[ "${encoding,,}" == "macroman" ]]; then
+    encoding="macintosh"
+  fi
+
   if [[ "${encoding,,}" == "utf-8" || "${encoding,,}" == "ascii" ]]; then
     cat "$line" | tail -n +3 | mlrgo --csv --ifs ";" -S --ragged remove-empty-columns >"$folder"/../../dati/"$nome"/processing/"$nomefile".csv
   else
