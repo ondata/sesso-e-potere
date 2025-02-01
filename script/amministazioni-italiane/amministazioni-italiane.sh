@@ -49,7 +49,7 @@ find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f -iname "prov*
   nomefile=$(basename "$line" .csv)
 
   encoding=$(chardetect --minimal "$line")
-  
+
   # Normalize encoding names
   if [[ "${encoding,,}" == "macroman" ]]; then
     encoding="macintosh"
@@ -80,7 +80,7 @@ find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "pro
   note=$(cat "$line" | sed -n '2p' | tr -d '\r')
   nomefile=$(basename "$line" .csv)
   encoding=$(chardetect --minimal "$line")
-  
+
   # Normalize encoding names
   if [[ "${encoding,,}" == "macroman" ]]; then
     encoding="macintosh"
@@ -94,7 +94,7 @@ find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "pro
   echo '{"nomefile":"'"$nomefile"'","titolo":"'"$titolo"'","note":"'"$note"'"}' >>"$folder"/../../dati/"$nome"/risorse/lista-file.jsonl
 done
 
-mlr --j2c clean-whitespace "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl>"$folder"/../../dati/"$nome"/risorse/lista-file.csv
+mlr --j2c clean-whitespace "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl >"$folder"/../../dati/"$nome"/risorse/lista-file.csv
 if [ -f "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl ];then
   rm "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl
 fi
