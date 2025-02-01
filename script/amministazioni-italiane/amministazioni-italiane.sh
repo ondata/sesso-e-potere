@@ -96,7 +96,10 @@ find "${folder}"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "p
     iconv -f "$encoding" -t utf-8 "$line" | tail -n +3 | mlrgo --csv --ifs ";" -S --ragged remove-empty-columns >"${folder}"/../../dati/"$nome"/processing/"$nomefile".csv
   fi
 
-  echo '{"nomefile":"'"$nomefile"'","titolo":"'"$titolo"'","note":"'"$note"'"}' >>"${folder}"/../../dati/"$nome"/risorse/lista-file.jsonl
+  # Remove any existing double quotes from the values and add single quotes for JSON
+  titolo_clean=$(echo "$titolo" | tr -d '"')
+  note_clean=$(echo "$note" | tr -d '"')
+  echo '{"nomefile":"'"$nomefile"'","titolo":"'"$titolo_clean"'","note":"'"$note_clean"'"}' >>"${folder}"/../../dati/"$nome"/risorse/lista-file.jsonl
 
   sleep 5
 done
