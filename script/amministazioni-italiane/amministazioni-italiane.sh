@@ -9,6 +9,7 @@ nome="amministazioni-italiane"
 
 folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# crea le directory necessarie per i dati grezzi, elaborati e report
 mkdir -p "$folder"/../../dati/"$nome"/rawdata
 mkdir -p "$folder"/../../dati/"$nome"/processing
 mkdir -p "$folder"/../../dati/"$nome"/report
@@ -24,9 +25,10 @@ curl "$URL" \
   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36' \
   --compressed | scrape -be '//span[@class="file"]/a' | xq -c '.html.body.a[]' >"$folder"/../../dati/"$nome"/rawdata/"$nome".jsonl
 
+# sposta nella directory dei dati grezzi
 cd "$folder"/../../dati/"$nome"/rawdata/
 
-# scarica file. Se impostato a "sì", scarica di nuovi i dati grezzi dalla sorgente
+# scarica file. Se impostato a "sì", scarica di nuovo i dati grezzi dalla sorgente
 scaricadati="no"
 if [ $scaricadati = "sì" ]; then
   find "$folder"/../../dati/amministazioni-italiane/rawdata/ -maxdepth 1 -iname "*.csv" -type f -delete
@@ -35,6 +37,7 @@ if [ $scaricadati = "sì" ]; then
   done
 fi
 
+# torna alla directory dello script
 cd "$folder"
 
 # elimina file temporaneo usato per fare dopo il merge dei dati raggruppati per provincia
@@ -69,6 +72,7 @@ mlrgo --ijsonl --ocsv --no-auto-flatten unsparsify  "$folder"/../../dati/"$nome"
 rm "$folder"/../../dati/"$nome"/processing/tmp.jsonl
 rm "$folder"/../../dati/"$nome"/rawdata/"$nome".jsonl
 
+# rimuovi il file temporaneo della lista se esiste
 if [ -f "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl ];then
   rm "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl
 fi
@@ -94,6 +98,7 @@ find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "pro
   echo '{"nomefile":"'"$nomefile"'","titolo":"'"$titolo"'","note":"'"$note"'"}' >>"$folder"/../../dati/"$nome"/risorse/lista-file.jsonl
 done
 
+# converti la lista file da JSON Lines a CSV e pulisci gli spazi
 mlr --j2c clean-whitespace "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl >"$folder"/../../dati/"$nome"/risorse/lista-file.csv
 if [ -f "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl ];then
   rm "$folder"/../../dati/"$nome"/risorse/lista-file.jsonl
@@ -114,6 +119,7 @@ mlr --csv cut -f comune then uniq -a "$folder"/../../dati/"$nome"/processing/amm
 
 mlr --csv join --ul --np -j comune -f "$folder"/../../dati/"$nome"/risorse/codici_comuni.csv then unsparsify then uniq -a "$folder"/tmp.csv >"$folder"/../../dati/"$nome"/report/ammcom-non-presenti.csv
 
+# rimuovi il file temporaneo se esiste
 if [ -f >"$folder"/tmp.csv ]; then
   rm "$folder"/tmp.csv
 fi
