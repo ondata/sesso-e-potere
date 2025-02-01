@@ -74,8 +74,13 @@ find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "pro
   titolo=$(cat "$line" | sed -n '1p' | tr -d '\r')
   note=$(cat "$line" | sed -n '2p' | tr -d '\r')
   nomefile=$(basename "$line" .csv)
-  #frictionless extract --field-type TEXT --csv --buffer-size 250000 "$line" >"$folder"/../../dati/"$nome"/processing/"$nomefile".csv
-  iconv -f ISO-8859-1 -t utf-8 "$line" |  tail -n +3 | mlrgo --csv --ifs ";" -S --ragged remove-empty-columns >"$folder"/../../dati/"$nome"/processing/"$nomefile".csv
+  encoding=$(chardetect --minimal "$line")
+  
+  if [[ "${encoding,,}" == "utf-8" || "${encoding,,}" == "ascii" ]]; then
+    cat "$line" | tail -n +3 | mlrgo --csv --ifs ";" -S --ragged remove-empty-columns >"$folder"/../../dati/"$nome"/processing/"$nomefile".csv
+  else
+    iconv -f "$encoding" -t utf-8 "$line" | tail -n +3 | mlrgo --csv --ifs ";" -S --ragged remove-empty-columns >"$folder"/../../dati/"$nome"/processing/"$nomefile".csv
+  fi
   echo '{"nomefile":"'"$nomefile"'","titolo":"'"$titolo"'","note":"'"$note"'"}' >>"$folder"/../../dati/"$nome"/risorse/lista-file.jsonl
 done
 
