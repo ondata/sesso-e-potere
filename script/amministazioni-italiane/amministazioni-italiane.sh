@@ -30,7 +30,7 @@ cd "$folder"/../../dati/"$nome"/rawdata/
 scaricadati="no"
 if [ $scaricadati = "sì" ]; then
   find "$folder"/../../dati/amministazioni-italiane/rawdata/ -maxdepth 1 -iname "*.csv" -type f -delete
-  jq <"$folder"/../../dati/amministazioni-italiane/rawdata/amministazioni-italiane.jsonl -r '."@href"' | grep -v 'provincia_di_agrigento.zip' | while read line; do
+  jq <"$folder"/../../dati/amministazioni-italiane/rawdata/amministazioni-italiane.jsonl -r '."@href"' | while read line; do
     wget -c --header="User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17" "$line"
   done
 fi
