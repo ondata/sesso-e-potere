@@ -47,18 +47,14 @@ fi
 find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f -iname "prov*.csv" -print0 | while IFS= read -r -d '' line; do
   echo "$line"
   nomefile=$(basename "$line" .csv)
-  #frictionless extract --csv --valid "$folder"/../../dati/amministazioni-italiane/risorse/province.yml --basepath "$folder"/../../dati/amministazioni-italiane/rawdata --path "$nomefile".csv | mlrgo --icsv --ojsonl --jvquoteall cat  >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
 
   encoding=$(chardetect --minimal "$line")
-  
+
   if [[ "${encoding,,}" == "utf-8" || "${encoding,,}" == "ascii" ]]; then
     cat "$folder"/../../dati/amministazioni-italiane/rawdata/"$nomefile".csv | tail -n +3 | mlrgo --icsv --ojsonl --fs ";" --jvquoteall -S --ragged cat >> "$folder"/../../dati/"$nome"/processing/tmp.jsonl
   else
     cat "$folder"/../../dati/amministazioni-italiane/rawdata/"$nomefile".csv | iconv -f "$encoding" -t utf-8 | tail -n +3 | mlrgo --icsv --ojsonl --fs ";" --jvquoteall -S --ragged cat >> "$folder"/../../dati/"$nome"/processing/tmp.jsonl
   fi
-  # iconv -f ISO-8859-1 -t utf-8 "$folder"/../../dati/amministazioni-italiane/rawdata/"$nomefile".csv  |  tail -n +3 | mlrgo --icsv --ojsonl --fs ";" --jvquoteall -S --ragged cat >> "$folder"/../../dati/"$nome"/processing/tmp.jsonl
-  #tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 | grep -v -E "^70;VIPITENO;BZ;6390" | grep -v -E "^;CN;777;;CANDELLERO;FEDERICO" | mlrgo --icsv --ojsonl --ragged --ifs ";"  put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
-  #tail <"$line" -n +3 | iconv -f iso8859-1 -t UTF-8 |  mlrgo --icsv --ojsonl --ragged --ifs ";"  put '$filename="'"$nomefile"'"' >>"$folder"/../../dati/"$nome"/processing/tmp.jsonl
 done
 
 # coverti il file JSON Lines in un file CSV
