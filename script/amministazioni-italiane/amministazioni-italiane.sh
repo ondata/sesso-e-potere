@@ -51,7 +51,7 @@ find "$folder"/../../dati/amministazioni-italiane/rawdata/ -type f -iname "prov*
 
   encoding=$(chardetect --minimal "$line")
   
-  if [[ "$encoding" == "utf-8" || "$encoding" == "ascii" ]]; then
+  if [[ "${encoding,,}" == "utf-8" || "${encoding,,}" == "ascii" ]]; then
     cat "$folder"/../../dati/amministazioni-italiane/rawdata/"$nomefile".csv | tail -n +3 | mlrgo --icsv --ojsonl --fs ";" --jvquoteall -S --ragged cat >> "$folder"/../../dati/"$nome"/processing/tmp.jsonl
   else
     cat "$folder"/../../dati/amministazioni-italiane/rawdata/"$nomefile".csv | iconv -f "$encoding" -t utf-8 | tail -n +3 | mlrgo --icsv --ojsonl --fs ";" --jvquoteall -S --ragged cat >> "$folder"/../../dati/"$nome"/processing/tmp.jsonl
