@@ -101,13 +101,11 @@ find "${folder}"/../../dati/amministazioni-italiane/rawdata/ -type f ! -iname "p
   note_clean=$(echo "$note" | tr -d '"')
   echo '{"nomefile":"'"$nomefile"'","titolo":"'"$titolo_clean"'","note":"'"$note_clean"'"}' >>"${folder}"/../../dati/"$nome"/risorse/lista-file.jsonl
 
-  sleep 5
+  sleep 0
 done
 
 # converti la lista file da JSON Lines a CSV e pulisci gli spazi
 mlr --j2c clean-whitespace "${folder}"/../../dati/"$nome"/risorse/lista-file.jsonl >"${folder}"/../../dati/"$nome"/risorse/lista-file.csv
-
-exit 0
 
 # aggiungi i codici elettorali comuni ai dati di tipo comunale e poi fai JOIN per aggiungere codici comunali ISTAT
 grep -lr --include=\*.csv "${folder}"/../../dati/amministazioni-italiane/processing -e 'codice_comune' | while read line; do
