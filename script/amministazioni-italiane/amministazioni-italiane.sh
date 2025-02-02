@@ -140,3 +140,9 @@ grep -lr --include=\*.csv "${folder}"/../../dati/amministazioni-italiane/process
   mlr --csv filter -S -x '$data_elezione=~"[0-9]+/[0-9]+"' "$line" >"${folder}"/tmp/tmp-"$name"-errors.csv
   mlr -I --csv filter -S '$data_elezione=~"[0-9]+/[0-9]+"' then put '$data_elezione_ISO=strftime(strptime($data_elezione, "%d/%m/%Y"),"%Y-%m-%d");$data_entrata_in_carica_ISO=strftime(strptime($data_entrata_in_carica, "%d/%m/%Y"),"%Y-%m-%d")' "$line"
 done
+
+# clean-whitespace
+grep -lr --include=\*.csv "${folder}"/../../dati/amministazioni-italiane/processing -e 'data_elezione_ISO,data_entrata_in_carica_ISO' | while read line; do
+  echo "$line"
+  mlr -I -S --csv clean-whitespace "$line"
+done
