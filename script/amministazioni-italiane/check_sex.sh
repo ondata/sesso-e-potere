@@ -1,9 +1,9 @@
 #!/bin/bash
 
 set -x
-#set -e
+set -e
 set -u
-#set -o pipefail
+set -o pipefail
 
 folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -37,28 +37,34 @@ for file in "${folder}"/../../dati/amministazioni-italiane/processing/*.csv; do
   fi
 done
 
-cat "${folder}"/tmp/dacontrollare.txt
-sleep 3
 
 while IFS= read -r line; do
-  echo "Elaborazione del file: ${line}"
-  nome=$(basename "${line}" .csv)
-  echo "Nome file: ${nome}"
 
-  mlr --c2n cut -f nome,sesso then filter 'is_null($sesso)' then uniq -a then cut -f nome "${line}" >"${folder}"/tmp/nomi_"${nome}".txt
-  echo "File nomi creato: ${folder}/tmp/nomi_${nome}.txt"
+    nome=$(basename "${line}" .csv)
 
-  if [ ! -s "${folder}"/tmp/nomi_"${nome}".txt ]; then
-    echo "File nomi_${nome}.txt è vuoto o non esiste. Saltando..."
-    continue
-  fi
+    mlr --c2n --from "${line}" cut -f nome,sesso then filter 'is_null($sesso)' then uniq -a then cut -f nome > "${folder}/tmp/nomi_${nome}.txt"
 
-  # Aggiungi gestione errore per sesso.sh
-  if ! sesso.sh -f "${folder}"/tmp/nomi_"${nome}".txt >"${folder}"/tmp/sesso_"${nome}".jsonl 2>/dev/null; then
-    echo "Attenzione: sesso.sh è uscito con errore per ${nome}. Continuiamo con il prossimo file..."
-    continue
-  fi
-  echo "Codice di uscita di sesso.sh: $?"
+    # Esecuzione sesso.sh con isolamento dello stdin
+    if ! sesso.sh -f "${folder}/tmp/nomi_${nome}.txt" > "${folder}/tmp/sesso_${nome}.jsonl" 2>/dev/null < /dev/null; then
+        echo "ERRORE: sesso.sh è uscito con errore per '${nome}'"
+        continue
+    fi
 
-  sleep 3
-done <"${folder}"/tmp/dacontrollare.txt
+    mlr --ijsonl --ocsv cat "${folder}/tmp/sesso_${nome}.jsonl" > "${folder}/tmp/sesso_${nome}.csv"
+
+    mlr --csv filter 'is_null($sesso)' "${line}" > "${folder}/tmp/${nome}_sesso_NA.csv"
+    mlr --csv filter -x 'is_null($sesso)' "${line}" > "${folder}/tmp/${nome}_sesso.csv"
+
+    mlr --csv join --ul -j nome -f "${folder}/tmp/${nome}_sesso_NA.csv" then unsparsify  "${folder}/tmp/sesso_${nome}.csv" > "${folder}"/tmp/tmp.csv
+
+    mv "${folder}/tmp/tmp.csv" "${folder}/tmp/${nome}_sesso_NA.csv"
+
+    mlr --csv unsparsify "${folder}/tmp/${nome}_sesso.csv" "${folder}/tmp/${nome}_sesso_NA.csv" > "${folder}/tmp/${nome}.csv"
+
+    mlr -I -S --csv sort -t codice_regione,codice_provincia,codice_comune "${folder}/tmp/${nome}.csv"
+
+    cp "${folder}/tmp/${nome}.csv" "${folder}"/../../dati/amministazioni-italiane/processing
+
+    sleep 3
+
+done < "${folder}/tmp/dacontrollare.txt"
