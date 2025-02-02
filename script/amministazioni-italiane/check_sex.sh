@@ -37,7 +37,6 @@ for file in "${folder}"/../../dati/amministazioni-italiane/processing/*.csv; do
   fi
 done
 
-
 while IFS= read -r line; do
 
     nome=$(basename "${line}" .csv)
@@ -51,6 +50,8 @@ while IFS= read -r line; do
     fi
 
     mlr --ijsonl --ocsv cat "${folder}/tmp/sesso_${nome}.jsonl" > "${folder}/tmp/sesso_${nome}.csv"
+
+    mlr -I -S --csv put '$nome=toupper($nome)' "${folder}/tmp/sesso_${nome}.csv"
 
     mlr --csv filter 'is_null($sesso)' "${line}" > "${folder}/tmp/${nome}_sesso_NA.csv"
     mlr --csv filter -x 'is_null($sesso)' "${line}" > "${folder}/tmp/${nome}_sesso.csv"
@@ -68,3 +69,7 @@ while IFS= read -r line; do
     sleep 3
 
 done < "${folder}/tmp/dacontrollare.txt"
+
+for file in "${folder}"/../../dati/amministazioni-italiane/processing/*.csv; do
+  mlr -I -S --csv sort -t codice_regione,codice_provincia,codice_comune "${file}"
+done
