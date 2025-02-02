@@ -37,9 +37,16 @@ for file in "${folder}"/../../dati/amministazioni-italiane/processing/*.csv; do
   fi
 done
 
+cat "${folder}"/tmp/dacontrollare.txt
+sleep 3
+
 while read -r line; do
   nome=$(basename "${line}" .csv)
   mlr --c2n cut -f nome,sesso then filter 'is_null($sesso)' then uniq -a then cut -f nome "${line}" >"${folder}"/tmp/nomi_"${nome}".txt
-  sesso.sh -f "${folder}"/tmp/nomi_"${nome}".txt >"${folder}"/tmp/sesso_"${nome}".jsonl
-  sleep 5
+  #sesso.sh -f "${folder}"/tmp/nomi_"${nome}".txt >"${folder}"/tmp/sesso_"${nome}".jsonl
+  # echo exit code: $?
+  echo "Codice di uscita: $?"
+  echo "File: ${line}"
+
+  sleep 3
 done <"${folder}"/tmp/dacontrollare.txt
