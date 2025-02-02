@@ -53,7 +53,11 @@ while IFS= read -r line; do
     continue
   fi
 
-  sesso.sh -f "${folder}"/tmp/nomi_"${nome}".txt >"${folder}"/tmp/sesso_"${nome}".jsonl
+  # Aggiungi gestione errore per sesso.sh
+  if ! sesso.sh -f "${folder}"/tmp/nomi_"${nome}".txt >"${folder}"/tmp/sesso_"${nome}".jsonl 2>/dev/null; then
+    echo "Attenzione: sesso.sh è uscito con errore per ${nome}. Continuiamo con il prossimo file..."
+    continue
+  fi
   echo "Codice di uscita di sesso.sh: $?"
 
   sleep 3
