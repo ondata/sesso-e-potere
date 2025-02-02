@@ -3,7 +3,7 @@
 set -x
 #set -e
 set -u
-set -o pipefail
+#set -o pipefail
 
 folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -40,13 +40,21 @@ done
 cat "${folder}"/tmp/dacontrollare.txt
 sleep 3
 
-while read -r line; do
+while IFS= read -r line; do
+  echo "Elaborazione del file: ${line}"
   nome=$(basename "${line}" .csv)
+  echo "Nome file: ${nome}"
+
   mlr --c2n cut -f nome,sesso then filter 'is_null($sesso)' then uniq -a then cut -f nome "${line}" >"${folder}"/tmp/nomi_"${nome}".txt
-  #sesso.sh -f "${folder}"/tmp/nomi_"${nome}".txt >"${folder}"/tmp/sesso_"${nome}".jsonl
-  # echo exit code: $?
-  echo "Codice di uscita: $?"
-  echo "File: ${line}"
+  echo "File nomi creato: ${folder}/tmp/nomi_${nome}.txt"
+
+  if [ ! -s "${folder}"/tmp/nomi_"${nome}".txt ]; then
+    echo "File nomi_${nome}.txt è vuoto o non esiste. Saltando..."
+    continue
+  fi
+
+  sesso.sh -f "${folder}"/tmp/nomi_"${nome}".txt >"${folder}"/tmp/sesso_"${nome}".jsonl
+  echo "Codice di uscita di sesso.sh: $?"
 
   sleep 3
 done <"${folder}"/tmp/dacontrollare.txt
