@@ -17,7 +17,7 @@ Sul sito di origine diverse fonti dati, su più file. Sono stati scaricati, ripu
 | [`ammcom.csv`](./ammcom.csv)                    | Amministratori Comunali - elenco completo Italia      | Aggiornato al 17/01/2025     |
 | [`ammmetropolitani.csv`](./ammmetropolitani.csv)          | Amministratori Metropolitani - elenco completo Italia | Aggiornato al 17/01/2025     |
 
-A questi è stato aggiunto il file [`file-provinciali.csv`](./file-provinciali.csv) che contiene l'unione di tutti i file presenti nel sito originale suddivise per provincia (Amministratori comunali della Provincia Agrigento, Amministratori comunali della Provincia Alessandria, ecc.).
+A questi è stato aggiunto il file [`file-provinciali.csv`](./file-provinciali.csv) che contiene l'unione di tutti i file presenti nel sito originale suddivisi per provincia (Amministratori comunali della Provincia Agrigento, Amministratori comunali della Provincia Alessandria, ecc.).
 
 ## LOG
 
