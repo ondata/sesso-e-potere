@@ -1,0 +1,47 @@
+{
+  "_id": "24_ambasciatori_pag_02",
+  "startUrl": [
+    "https://www.esteri.it/it/ministero/struttura/laretediplomatica/?pag=[1-21]"
+  ],
+  "selectors": [
+    {
+      "id": "blocco",
+      "multiple": true,
+      "parentSelectors": [
+        "_root"
+      ],
+      "selector": "div.accordion-item",
+      "type": "SelectorElement"
+    },
+    {
+      "id": "paese",
+      "multiple": false,
+      "parentSelectors": [
+        "blocco"
+      ],
+      "regex": "",
+      "selector": "button",
+      "type": "SelectorText"
+    },
+    {
+      "id": "AMBASCIATA",
+      "multiple": false,
+      "parentSelectors": [
+        "blocco"
+      ],
+      "regex": "",
+      "selector": "li:contains('AMBASCIATA')",
+      "type": "SelectorText"
+    },
+    {
+      "id": "AMBASCIATORE",
+      "multiple": false,
+      "parentSelectors": [
+        "blocco"
+      ],
+      "regex": "",
+      "selector": "li:contains('AMBASCIATORE')",
+      "type": "SelectorText"
+    }
+  ]
+}
