@@ -1,0 +1,518 @@
+[
+  {
+    "nome": "TEMPESTA Marco",
+    "ufficio": "Dipartimento per l'Amministrazione Generale, per le Politiche del Personale dell'Amministrazione Civile e per le Risorse Strumentali e Finanziarie",
+    "anno": "2022"
+  },
+  {
+    "nome": "AMATO Amelia",
+    "ufficio": "Uffici di diretta collaborazione",
+    "anno": "2022"
+  },
+  {
+    "nome": "VISCARDI Antonio",
+    "ufficio": "Dipartimento per l'Amministrazione Generale, per le Politiche del Personale dell'Amministrazione Civile e per le Risorse Strumentali e Finanziarie",
+    "anno": "2022"
+  },
+  {
+    "nome": "IULIANI Floriano",
+    "ufficio": "Dipartimento per l'Amministrazione Generale, per le Politiche del Personale dell'Amministrazione Civile e per le Risorse Strumentali e Finanziarie",
+    "anno": "2022"
+  },
+  {
+    "nome": "CAPUTO Pier Luigi",
+    "ufficio": "Direzione Centrale per le Risorse Finanziarie e strumentali",
+    "anno": "2022"
+  },
+  {
+    "nome": "DE LAURENTIS Nadia",
+    "ufficio": "Direzione Centrale per le Risorse Finanziarie e strumentali",
+    "anno": "2022"
+  },
+  {
+    "nome": "FERRI Paolo",
+    "ufficio": "Dipartimento per l'Amministrazione Generale, per le Politiche del Personale dell'Amministrazione Civile e per le Risorse Strumentali e Finanziarie",
+    "anno": "2022"
+  },
+  {
+    "nome": "MANNARINO Salvatore",
+    "ufficio": "Dipartimento per l'Amministrazione Generale, per le Politiche del Personale dell'Amministrazione Civile e per le Risorse Strumentali e Finanziarie",
+    "anno": "2022"
+  },
+  {
+    "nome": "GEMMELLARO Giuseppe",
+    "ufficio": "Dipartimento per l'Amministrazione Generale, per le Politiche del Personale dell'Amministrazione Civile e per le Risorse Strumentali e Finanziarie",
+    "anno": "2022"
+  },
+  {
+    "nome": "SBARRA Anna Maria",
+    "ufficio": "Dipartimento per l'Amministrazione Generale, per le Politiche del Personale dell'Amministrazione Civile e per le Risorse Strumentali e Finanziarie",
+    "anno": "2022"
+  },
+  {
+    "nome": "SCARAPAZZI Catia",
+    "ufficio": "Direzione Centrale per le politiche del personale dell'amministrazione civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "TULIPANO Francesco Emmanuele",
+    "ufficio": "Direzione Centrale per le politiche del personale dell'amministrazione civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "FISCHETTI Francesco Paolo",
+    "ufficio": "Direzione Centrale per le politiche del personale dell'amministrazione civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "DE SANTIS Maria Paola",
+    "ufficio": "Dipartimento per l'Amministrazione Generale, per le Politiche del Personale dell'Amministrazione Civile e per le Risorse Strumentali e Finanziarie",
+    "anno": "2022"
+  },
+  {
+    "nome": "MONNATI Erika",
+    "ufficio": "Direzione Centrale Amministrazione Generale e per le Prefetture -UTG",
+    "anno": "2022"
+  },
+  {
+    "nome": "PASTORELLO Maria Giovanna",
+    "ufficio": "Dipartimento delle Libertà Civili",
+    "anno": "2022"
+  },
+  {
+    "nome": "BRUZICHES Alessandra",
+    "ufficio": "Dipartimento delle Libertà Civili",
+    "anno": "2022"
+  },
+  {
+    "nome": "SAVELLI Giuseppina",
+    "ufficio": "Dipartimento delle Libertà Civili",
+    "anno": "2022"
+  },
+  {
+    "nome": "BUCCINI Valter",
+    "ufficio": "Dipartimento delle Libertà Civili",
+    "anno": "2022"
+  },
+  {
+    "nome": "SINIBALDI Serena",
+    "ufficio": "Dipartimento delle Libertà Civili",
+    "anno": "2022"
+  },
+  {
+    "nome": "DI FELICE Marina",
+    "ufficio": "Dipartimento della Pubblica Sicurezza",
+    "anno": "2022"
+  },
+  {
+    "nome": "BUCCHIERI Annalisa",
+    "ufficio": "Dipartimento della Pubblica Sicurezza",
+    "anno": "2022"
+  },
+  {
+    "nome": "FORNARO Maria Pia",
+    "ufficio": "Dipartimento della Pubblica Sicurezza",
+    "anno": "2022"
+  },
+  {
+    "nome": "IACOVACCI Dario",
+    "ufficio": "Dipartimento della Pubblica Sicurezza",
+    "anno": "2022"
+  },
+  {
+    "nome": "MONTANARO Giuseppe",
+    "ufficio": "Dipartimento della Pubblica Sicurezza",
+    "anno": "2022"
+  },
+  {
+    "nome": "RICCIARDI Francesco",
+    "ufficio": "Dipartimento dei Vigili del Fuoco, del Soccorso Pubblico e della Difesa Civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "FATINI Cristina",
+    "ufficio": "Dipartimento dei Vigili del Fuoco, del Soccorso Pubblico e della Difesa Civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "IOLLO Sergio",
+    "ufficio": "Dipartimento dei Vigili del Fuoco, del Soccorso Pubblico e della Difesa Civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "DE PAOLA Gioconda",
+    "ufficio": "Dipartimento dei Vigili del Fuoco, del Soccorso Pubblico e della Difesa Civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "DELLA VECCHIA Corrado",
+    "ufficio": "Dipartimento dei Vigili del Fuoco, del Soccorso Pubblico e della Difesa Civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "FILOSA Francesco",
+    "ufficio": "Dipartimento dei Vigili del Fuoco, del Soccorso Pubblico e della Difesa Civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "DI PAOLA Tiziana",
+    "ufficio": "Dipartimento dei Vigili del Fuoco, del Soccorso Pubblico e della Difesa Civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "FORNACIARI Fabiana",
+    "ufficio": "Dipartimento dei Vigili del Fuoco, del Soccorso Pubblico e della Difesa Civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "SPARACINO Maria Laura",
+    "ufficio": "Dipartimento dei Vigili del Fuoco, del Soccorso Pubblico e della Difesa Civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "DI BERARDINO Lorenzo",
+    "ufficio": "Dipartimento dei Vigili del Fuoco, del Soccorso Pubblico e della Difesa Civile",
+    "anno": "2022"
+  },
+  {
+    "nome": "IATOMASI Giuseppe",
+    "ufficio": "Dipartimento Affari Interni e Territoriali",
+    "anno": "2022"
+  },
+  {
+    "nome": "MANCINI Giulio",
+    "ufficio": "Dipartimento Affari Interni e Territoriali",
+    "anno": "2022"
+  },
+  {
+    "nome": "DI SALVATORE Nunzia",
+    "ufficio": "Dipartimento Affari Interni e Territoriali",
+    "anno": "2022"
+  },
+  {
+    "nome": "SALVATO Rosalba",
+    "ufficio": "Dipartimento Affari Interni e Territoriali",
+    "anno": "2022"
+  },
+  {
+    "nome": "BARBATI Gianna",
+    "ufficio": "Dipartimento Affari Interni e Territoriali",
+    "anno": "2022"
+  },
+  {
+    "nome": "ALFANO Marco",
+    "ufficio": "Dipartimento Affari Interni e Territoriali",
+    "anno": "2022"
+  },
+  {
+    "nome": "D'ANGELO Antonio",
+    "ufficio": "Dipartimento Affari Interni e Territoriali",
+    "anno": "2022"
+  },
+  {
+    "nome": "CARNICELLA Nicoletta",
+    "ufficio": "Struttura di Missione Prevenzione e Contrasto Antimafia Sisma",
+    "anno": "2022"
+  },
+  {
+    "nome": "GROSSI Paola",
+    "ufficio": "Commissario Straordinario Antiracket e Antiusura",
+    "anno": "2022"
+  },
+  {
+    "nome": "SPINAZZOLA Maria Luisa",
+    "ufficio": "UTG di Alessandria",
+    "anno": "2022"
+  },
+  {
+    "nome": "SCARAMOZZINO Iris",
+    "ufficio": "UTG di Alessandria",
+    "anno": "2022"
+  },
+  {
+    "nome": "SOPRANZETTI Gabriella",
+    "ufficio": "UTG di Ascoli Piceno",
+    "anno": "2022"
+  },
+  {
+    "nome": "SPALATO CERUSO Anna Maria",
+    "ufficio": "UTG di Avellino",
+    "anno": "2022"
+  },
+  {
+    "nome": "CASSANO Giandonato",
+    "ufficio": "UTG di Bari",
+    "anno": "2022"
+  },
+  {
+    "nome": "CANTORO Mariangela",
+    "ufficio": "UTG di Bari",
+    "anno": "2022"
+  },
+  {
+    "nome": "BONADIE Paolo",
+    "ufficio": "UTG di Barletta Adria Trani",
+    "anno": "2022"
+  },
+  {
+    "nome": "BONGERMINO Loredana",
+    "ufficio": "UTG di Bologna",
+    "anno": "2022"
+  },
+  {
+    "nome": "MIGLIOZZI Antonia",
+    "ufficio": "UTG di Campobasso",
+    "anno": "2022"
+  },
+  {
+    "nome": "CERIELLO Angelo",
+    "ufficio": "UTG di Caserta",
+    "anno": "2022"
+  },
+  {
+    "nome": "LONGARI Maura",
+    "ufficio": "UTG di Cremona",
+    "anno": "2022"
+  },
+  {
+    "nome": "CHIAVASSA Marina",
+    "ufficio": "UTG di Cuneo",
+    "anno": "2022"
+  },
+  {
+    "nome": "FACHIN Franca",
+    "ufficio": "UTG di Cuneo",
+    "anno": "2022"
+  },
+  {
+    "nome": "MARTINI Gianluca",
+    "ufficio": "UTG di Fermo",
+    "anno": "2022"
+  },
+  {
+    "nome": "LANDRISCINA Antonio",
+    "ufficio": "UTG di Firenze",
+    "anno": "2022"
+  },
+  {
+    "nome": "SALVI Cristiana",
+    "ufficio": "UTG di Forlì Cesena",
+    "anno": "2022"
+  },
+  {
+    "nome": "VASSALLO Laura",
+    "ufficio": "UTG di Genova",
+    "anno": "2022"
+  },
+  {
+    "nome": "OGGIANU Alessandra",
+    "ufficio": "UTG di Genova",
+    "anno": "2022"
+  },
+  {
+    "nome": "NAPOLITANO Lucia",
+    "ufficio": "UTG di Grosseto",
+    "anno": "2022"
+  },
+  {
+    "nome": "NISTICO' Annalisa",
+    "ufficio": "UTG di La Spezia",
+    "anno": "2022"
+  },
+  {
+    "nome": "MASELLI Simona Maria",
+    "ufficio": "UTG di Lecce",
+    "anno": "2022"
+  },
+  {
+    "nome": "FEDI Patrizia",
+    "ufficio": "UTG di Lucca",
+    "anno": "2022"
+  },
+  {
+    "nome": "PARATORE Giuseppa",
+    "ufficio": "UTG di Messina",
+    "anno": "2022"
+  },
+  {
+    "nome": "CATALANO Sebastiano Antonio Giuseppe",
+    "ufficio": "UTG di Milano",
+    "anno": "2022"
+  },
+  {
+    "nome": "DE SANTIS Gennaro",
+    "ufficio": "UTG di Napoli",
+    "anno": "2022"
+  },
+  {
+    "nome": "FERRARELLI Marco",
+    "ufficio": "UTG di Oristano",
+    "anno": "2022"
+  },
+  {
+    "nome": "PATTI Giuseppina",
+    "ufficio": "UTG di Palermo",
+    "anno": "2022"
+  },
+  {
+    "nome": "DI GIOVANNI Vincenzo",
+    "ufficio": "UTG di Pavia",
+    "anno": "2022"
+  },
+  {
+    "nome": "TUSCANO Carmelo",
+    "ufficio": "UTG di Pavia",
+    "anno": "2022"
+  },
+  {
+    "nome": "DE STEFANO Stefania",
+    "ufficio": "UTG di Pisa",
+    "anno": "2022"
+  },
+  {
+    "nome": "ANASTASIO Anna",
+    "ufficio": "UTG di Pistoia",
+    "anno": "2022"
+  },
+  {
+    "nome": "CASTELLI Antonio",
+    "ufficio": "UTG di Pordenone",
+    "anno": "2022"
+  },
+  {
+    "nome": "MAIO Domenica Maria",
+    "ufficio": "UTG di Potenza",
+    "anno": "2022"
+  },
+  {
+    "nome": "DE FAZIO Elisabetta",
+    "ufficio": "UTG di Prato",
+    "anno": "2022"
+  },
+  {
+    "nome": "MARAZZITA Maria Carmela",
+    "ufficio": "UTG di Reggio Calabria",
+    "anno": "2022"
+  },
+  {
+    "nome": "CAROLI Andrea",
+    "ufficio": "UTG di Reggio Emilia",
+    "anno": "2022"
+  },
+  {
+    "nome": "CARBINI Carlo",
+    "ufficio": "UTG di Salerno",
+    "anno": "2022"
+  },
+  {
+    "nome": "ZAMBRANO Enza",
+    "ufficio": "UTG di Salerno",
+    "anno": "2022"
+  },
+  {
+    "nome": "VOZZA Roberto",
+    "ufficio": "UTG di Taranto",
+    "anno": "2022"
+  },
+  {
+    "nome": "MARTINI Angelo",
+    "ufficio": "UTG di Torino",
+    "anno": "2022"
+  },
+  {
+    "nome": "IERACE Luigi",
+    "ufficio": "UTG di Torino",
+    "anno": "2022"
+  },
+  {
+    "nome": "CILLO Alfredo Gerardo",
+    "ufficio": "UTG di Treviso",
+    "anno": "2022"
+  },
+  {
+    "nome": "LEVANE Gerardo",
+    "ufficio": "UTG di Treviso",
+    "anno": "2022"
+  },
+  {
+    "nome": "CIOFFI Angela",
+    "ufficio": "UTG di Trieste",
+    "anno": "2022"
+  },
+  {
+    "nome": "MONDELLO Maria Rosa",
+    "ufficio": "UTG Vicenza",
+    "anno": "2022"
+  },
+  {
+    "nome": "DELLE FAVE Roberto",
+    "ufficio": "Questura di Genova",
+    "anno": "2022"
+  },
+  {
+    "nome": "FEOLA Antonella",
+    "ufficio": "Questura di Imperia",
+    "anno": "2022"
+  },
+  {
+    "nome": "TOMASELLO Antonina",
+    "ufficio": "Questura di Milano",
+    "anno": "2022"
+  },
+  {
+    "nome": "IMPARATO Franco",
+    "ufficio": "Questura di Napoli",
+    "anno": "2022"
+  },
+  {
+    "nome": "VENTO Fiorella",
+    "ufficio": "Questura di Napoli",
+    "anno": "2022"
+  },
+  {
+    "nome": "SCAGLIONE Antonino",
+    "ufficio": "Questura di Palermo",
+    "anno": "2022"
+  },
+  {
+    "nome": "FIGUNDIO Paola Maria Grazia",
+    "ufficio": "Questura di Potenza",
+    "anno": "2022"
+  },
+  {
+    "nome": "CARIDI Luciano",
+    "ufficio": "Questura di Reggio Calabria",
+    "anno": "2022"
+  },
+  {
+    "nome": "MELISSE Massimo",
+    "ufficio": "Questura di Roma",
+    "anno": "2022"
+  },
+  {
+    "nome": "DI FRANCESCO Paolo",
+    "ufficio": "Questura di Roma",
+    "anno": "2022"
+  },
+  {
+    "nome": "AZZALI Viviana",
+    "ufficio": "Questura di Roma",
+    "anno": "2022"
+  },
+  {
+    "nome": "ROMANO Luigi",
+    "ufficio": "Questura di Roma",
+    "anno": "2022"
+  },
+  {
+    "nome": "MANZI Vincenza",
+    "ufficio": "Questura di Salerno",
+    "anno": "2022"
+  },
+  {
+    "nome": "PERSIA Patrizia Rosalba",
+    "ufficio": "Questura di Venezia",
+    "anno": "2022"
+  }
+]
+
