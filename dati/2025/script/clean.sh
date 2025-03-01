@@ -47,6 +47,8 @@ find "${folder}"/../input -type f -name "*.xlsx" | while read -r file; do
 
     # Normalizza i nomi delle colonne usando DuckDB
     duckdb --csv -c "select * from read_csv_auto('${folder}/../rawdata/${name_snake}.csv',normalize_names=true)" >"${folder}"/tmp/tmp.csv
+
+    # ulteriore normalizzazione
     mlr -S --csv cat "${folder}"/tmp/tmp.csv >"${folder}"/../rawdata/"${name_snake}".csv
   done
 done
