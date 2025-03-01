@@ -9,6 +9,8 @@
 
 # Note per il Dipartimento per gli Affari Interni e Territoriali
 
+**NOTA BENE**: sono note relative al novembre 2023.
+
 ## Non sono presenti i dati su tutti i comuni di Italia
 
 Mancano i comuni elencati in [questo file](report/ammcom-non-presenti.csv).
