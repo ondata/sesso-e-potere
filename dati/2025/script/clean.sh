@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Requisiti:
+# - qsv: per manipolare file Excel e CSV (https://github.com/jqnatividad/qsv)
+# - jq: per elaborare JSON (https://stedolan.github.io/jq/)
+# - mlr (Miller): per manipolare dati tabulari (https://github.com/johnkerl/miller)
+# - duckdb: per operazioni SQL su file CSV (https://duckdb.org/)
+
 # Impostazioni per rendere lo script più robusto
 set -x                  # Mostra i comandi mentre vengono eseguiti
 set -e                  # Termina lo script se un comando fallisce
