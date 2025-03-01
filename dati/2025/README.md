@@ -2,6 +2,36 @@
 
 In questa pagina trovi l'elenco dei **principali dati** che abbiamo usato per l'**edizione 2025** di **SESSO È POTERE**.  È un'inchiesta realizzata da [**info.nodes**](https://www.infonodes.org/) in collaborazione con **onData**, che analizza le disuguaglianze di genere nella rappresentanza e nella gestione del potere in Italia.
 
+## Indice dei dati
+
+- [POLITICA](#politica)
+  - [Governo - Presidente](#governo---presidente)
+  - [Governo](#governo)
+  - [Camera - Presidente](#camera---presidente)
+  - [Camera](#camera)
+  - [Senato - Presidente](#senato---presidente)
+  - [Senato](#senato)
+  - [Ambasciate](#ambasciate)
+  - [Sindaci](#sindaci)
+  - [Consiglio e Giunta dei Comuni](#consiglio-e-giunta-dei-comuni)
+  - [Presidenza Regione, Giunta Regione e Consiglio Regione](#presidenza-regione-giunta-regione-e-consiglio-regione)
+- [ECONOMIA](#economia)
+  - [MEF](#mef)
+  - [Società quotate - CEO e Presidente](#società-quotate---ceo-e-presidente)
+  - [Gruppi bancari](#gruppi-bancari)
+  - [Gruppi Tech](#gruppi-tech)
+- [MEDIA](#media)
+  - [Quotidiani](#quotidiani)
+  - [TG](#tg)
+  - [Agenzie di stampa](#agenzie-di-stampa)
+- [SOCIETÀ](#società)
+  - [Atenei](#atenei)
+  - [Enti di ricerca](#enti-di-ricerca)
+  - [Autorità indipendenti](#autorità-indipendenti)
+- [CONTESTO](#contesto)
+  - [Percentuale residenti](#percentuale-residenti)
+  - [ISTAT: livelli educativi](#istat-livelli-educativi)
+
 I dati sono divisi in categorie e corredati (ove applicabile/possibile) a queste informazioni:
 
 - `Titolo`, ovvero il titolo della fonte da cui sono stati estratti i dati;
