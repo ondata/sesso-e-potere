@@ -43,7 +43,7 @@ find "${folder}"/../input -type f -name "*.xlsx" | while read -r file; do
     qsv excel -Q --sheet "${name}" "${file}" > "${folder}"/../rawdata/"${name_snake}".csv
 
     # Pulizia varia: rimuovi spazi bianchi, colonne vuote e rinomina alcune colonne
-    mlr -I -S --csv clean-whitespace then remove-empty-columns then rename start-url,link,genere,Sesso,s,Sesso,S,Sesso then rename -r '"genere"i,Sesso'  "${folder}"/../rawdata/"${name_snake}".csv
+    mlr -I -S --csv clean-whitespace then remove-empty-columns then sub -f genere "^male$" M then sub -f genere female F  then rename start-url,link,genere,Sesso,s,Sesso,S,Sesso then rename -r '"genere"i,Sesso'  "${folder}"/../rawdata/"${name_snake}".csv
 
     # Normalizza i nomi delle colonne usando DuckDB
     duckdb --csv -c "select * from read_csv_auto('${folder}/../rawdata/${name_snake}.csv',normalize_names=true)" >"${folder}"/tmp/tmp.csv
