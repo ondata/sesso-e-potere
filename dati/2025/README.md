@@ -85,7 +85,7 @@ I dati sono stati estratti tra gennaio e febbraio 2025.
 - Titolo: Rete diplomatica
 - URL: https://www.esteri.it/it/ministero/struttura/laretediplomatica/
 - Sheet: https://docs.google.com/spreadsheets/d/1lNlN3TaCre1A17xXB5sXbKt_IALycdvdOB3-3XIwxsE/edit?gid=2128522936#gid=2128522936
-- RAW_DATA: [`ambasciate.csv`](../dati/ambasciate/processing/ambasciate.csv)
+- RAW_DATA: [`ambasciate.csv`](../ambasciate/processing/ambasciate.csv)
 
 #### Sindaci
 
