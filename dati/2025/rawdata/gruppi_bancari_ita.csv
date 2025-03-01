@@ -1,4 +1,4 @@
-n,gruppo_bancario,nome,cognome,ruolo,genere,link
+n,gruppo_bancario,nome,cognome,ruolo,sesso,link
 1,Intesa Sanpaolo,Carlo,Messina,CEO,M,
 2,UniCredit,Andrea,Orcel,CEO,M,
 3,Banco BPM,Giuseppe,Castagna,CEO,M,

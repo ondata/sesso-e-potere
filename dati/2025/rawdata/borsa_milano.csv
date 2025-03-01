@@ -1,4 +1,4 @@
-num,nome,capitalizzazione,cap_al_3001,ceo,link,note,genere_ceo,presidente_cda,genere_presidente_cda
+num,nome,capitalizzazione,cap_al_3001,ceo,link,note,sesso_ceo,presidente_cda,sesso_presidente_cda
 1,Ferrari,79434,81145,Benedetto Vigna,https://www.ferrari.com/en-EN/corporate/executive-officers,,M,John Elkan,M
 2,Intesa Sanpaolo,63277,73376,Carlo Messina,https://group.intesasanpaolo.com/it/chi-siamo/struttura-organizzativa/biografie-top-manager,,M,Gian Maria Gros-Pietro,M
 3,Enel,68196,68346,Flavio Cattaneo,https://www.enel.com/it/azienda/chi-siamo/presidente-management-team,,M,Paolo Scaroni,M
