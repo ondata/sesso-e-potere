@@ -6,7 +6,8 @@ Sono divisi per categoria e sono corredati (ove applicabile) da queste informazi
 
 - `Titolo`, ovvero il titolo della fonte da cui sono stati estratti i dati;
 - `URL`, ovvero il link alla fonte da cui sono stati estratti i dati;
-- `Sheet`, ovvero il link al foglio di lavoro Google in cui è presente una copia dei dati
+- `Sheet`, ovvero il link al foglio di lavoro Google in cui è presente una copia dei dati;
+- `RAW_DATA`, ovvero un file CSV reso disponibile per desidera un formato dati per elaborazioni "grezze" dei dati. Sono file CSV con separatore di campo `,` e codifica `UTF-8`, che abbiamo pulito e normalizzato.
 
 ## Dati
 
