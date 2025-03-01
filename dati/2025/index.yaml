@@ -1,0 +1,90 @@
+# Indice dei dati con file CSV disponibili
+datasets:
+  - category: POLITICA
+    items:
+      - title: Camera
+        url: https://dati.camera.it/
+        sheet: https://docs.google.com/spreadsheets/d/1-2GFVAfeY3cqCyr7qMZDUThHYT8KUUKM-ro7_NAofbM/edit?gid=1358560610#gid=1358560610
+        raw_data: camera.csv
+      
+      - title: Senato
+        url: https://dati.senato.it/DatiSenato/browse/6?testo_generico=11&legislatura=19
+        sheet: https://docs.google.com/spreadsheets/d/1BqzlfWnXdwvzHGULnN6BljyS2BmCyVfTm7dxA095bcw/edit?gid=1626256383#gid=1626256383
+        raw_data: senato.csv
+      
+      - title: Ambasciate
+        url: https://www.esteri.it/it/ministero/struttura/laretediplomatica/
+        sheet: https://docs.google.com/spreadsheets/d/1lNlN3TaCre1A17xXB5sXbKt_IALycdvdOB3-3XIwxsE/edit?gid=2128522936#gid=2128522936
+        raw_data: ambasciate.csv
+      
+      - title: Sindaci
+        url: https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica
+        data_url: https://dait.interno.gov.it/documenti/sindaciincarica.csv
+        sheet: https://docs.google.com/spreadsheets/d/142VvQIr3Zr7DGbvgRtJyJ4dlypKfX40l4P9mILYSlgw/edit?gid=2135229812#gid=2135229812
+        raw_data: sindaciincarica.csv
+      
+      - title: Consiglio e Giunta Comune
+        url: https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica
+        data_url: https://dait.interno.gov.it/documenti/ammcom.csv
+        sheet: https://docs.google.com/spreadsheets/d/1VjVIUNolDgiuz4l465_LBSCPfVEoB2mr1DN5A8LdekM/edit?gid=1542105272#gid=1542105272
+        raw_data: ammcom.csv
+      
+      - title: Presidenza Regione, Giunta Regione e Consiglio Regione
+        url: https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica
+        data_url: https://dait.interno.gov.it/documenti/ammreg.csv
+        sheet: https://docs.google.com/spreadsheets/d/1UbTWqyzGroZ8o9ILbGdjFLpVzrT9Uz4IYwVrlsfPIwY/edit?gid=598757995#gid=598757995
+        raw_data: ammreg.csv
+  
+  - category: ECONOMIA
+    items:
+      - title: MEF
+        url: https://www.de.mef.gov.it/it/attivita_istituzionali/partecipazioni/elenco_partecipazioni/
+        sheet: https://docs.google.com/spreadsheets/d/1HsSbItV2itCOhIWEy58L4U_VL3woJ-7TWG2h9HYEQ6w/edit?gid=0#gid=0
+        raw_data: mef.csv
+      
+      - title: Società quotate - CEO e Presidente
+        url: https://mercati.ilsole24ore.com/azioni/classifiche/capitalizzazione-piazza-affari
+        sheet: https://docs.google.com/spreadsheets/d/1xomIYXvtBw0ShaXBDtC0Nj-iWgTXXqFSkW5ueKOyBF4/edit?gid=0#gid=0
+        raw_data: borsa_milano.csv
+      
+      - title: Gruppi bancari
+        sheet: https://docs.google.com/spreadsheets/d/1xomIYXvtBw0ShaXBDtC0Nj-iWgTXXqFSkW5ueKOyBF4/edit?gid=1598042960#gid=1598042960
+        raw_data: gruppi_bancari_ita.csv
+      
+      - title: Gruppi Tech
+        url: https://www.businessintelligencegroup.it/le-aziende-tecnologiche-ditalia-il-segmento-hi-tech-di-euronext/
+        sheet: https://docs.google.com/spreadsheets/d/1xomIYXvtBw0ShaXBDtC0Nj-iWgTXXqFSkW5ueKOyBF4/edit?gid=1237166295#gid=1237166295
+        raw_data: tech_ita.csv
+  
+  - category: MEDIA
+    items:
+      - title: Quotidiani
+        url: https://www.agcom.it/sites/default/files/media/allegato/2024/Pubblicazione_Report_Tirature_2023%20%281%29%20copia.pdf
+        sheet: https://docs.google.com/spreadsheets/d/1G4j0CDqW-Hpgg7RzHJ5husdxLW4RSIMW8_Wnl0PFLgg/edit?gid=0#gid=0
+        raw_data: quotidiani_x_tiratura.csv
+      
+      - title: TG
+        sheet: https://docs.google.com/spreadsheets/d/1G4j0CDqW-Hpgg7RzHJ5husdxLW4RSIMW8_Wnl0PFLgg/edit?gid=501240274#gid=501240274
+        raw_data: tg.csv
+      
+      - title: Agenzie di stampa
+        url: https://it.wikipedia.org/wiki/Agenzia_di_stampa
+        sheet: https://docs.google.com/spreadsheets/d/1G4j0CDqW-Hpgg7RzHJ5husdxLW4RSIMW8_Wnl0PFLgg/edit?gid=773087133#gid=773087133
+        raw_data: agenzie_stampa.csv
+  
+  - category: SOCIETÀ
+    items:
+      - title: Atenei
+        url: https://www.crui.it/atenei-e-rettori-crui/elenco-rettori.html
+        sheet: https://docs.google.com/spreadsheets/d/1_O5MB3ego_748hL9ejWVzgWve85ubjchbPWmd9gyXnM/edit?gid=0#gid=0
+        raw_data: universita.csv
+      
+      - title: Enti di ricerca
+        url: https://www.mur.gov.it/it/aree-tematiche/ricerca/il-sistema-della-ricerca/enti-di-ricerca-pubblici
+        sheet: https://docs.google.com/spreadsheets/d/1xvWbU9o1-KnG-O4q7peJ3ZnUROD-iOx1DR6qxZsB5Z4/edit?gid=0#gid=0
+        raw_data: enti_di_ricerca.csv
+      
+      - title: Autorità indipendenti
+        url: https://www.senato.it/3222
+        sheet: https://docs.google.com/spreadsheets/d/1RdfZo_4PyewMiGG_JN8x1zatO-UsYyv2YayhMoJ7WaQ/edit?gid=0#gid=0
+        raw_data: autorità_indipendenti.csv
