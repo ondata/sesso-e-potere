@@ -25,10 +25,10 @@ find "${folder}"/../rawdata -type f -name "*.csv" -delete
 find "${folder}"/../input -type f -name "*.xlsx" | while read -r file; do
   # Estrai il nome del file senza estensione
   nome=$(basename "${file}" .xlsx)
-  
+
   # Estrai i metadati del file Excel in formato JSON
   qsv excel --metadata j "${file}" >"${folder}"/tmp/"${nome}".jsonl
-  
+
   # Elabora ogni foglio del file Excel
   cat "${folder}"/tmp/"${nome}".jsonl | jq -c '.sheet[]' | while read -r line; do
     echo "$line"
@@ -47,6 +47,6 @@ find "${folder}"/../input -type f -name "*.xlsx" | while read -r file; do
 
     # Normalizza i nomi delle colonne usando DuckDB
     duckdb --csv -c "select * from read_csv_auto('${folder}/../rawdata/${name_snake}.csv',normalize_names=true)" >"${folder}"/tmp/tmp.csv
-    mv "${folder}"/tmp/tmp.csv "${folder}"/../rawdata/"${name_snake}".csv
+    mlr -S --csv cat "${folder}"/tmp/tmp.csv >"${folder}"/../rawdata/"${name_snake}".csv
   done
 done
