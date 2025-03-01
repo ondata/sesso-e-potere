@@ -59,7 +59,7 @@ Sono divisi per categoria e sono corredati (ove applicabile) da queste informazi
 - URL: https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica
 - Data_URL: https://dait.interno.gov.it/documenti/sindaciincarica.csv
 - Sheet: https://docs.google.com/spreadsheets/d/142VvQIr3Zr7DGbvgRtJyJ4dlypKfX40l4P9mILYSlgw/edit?gid=2135229812#gid=2135229812
-- RAW_DATA: [`sindaciincarica.csv`](../dati/amministazioni-italiane/processing/sindaciincarica.csv)
+- RAW_DATA: [`sindaciincarica.csv`](../../dati/amministazioni-italiane/processing/sindaciincarica.csv)
   - Note: modificato encoding da `ISO8859-1` a `UTF-8`, cambiato separatore di campo da `;` a `,`, inserite colonne `data_elezione_ISO` e `data_entrata_in_carica_ISO` in formato `YYYY-MM-DD`, rimosse righe di intestazione superflue, aggiunta colonna `CODICE_ISTAT` con codice ISTAT del comune.
 
 #### Consiglio e Giunta Comune
@@ -68,7 +68,7 @@ Sono divisi per categoria e sono corredati (ove applicabile) da queste informazi
 - URL: https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica
 - Data_URL: https://dait.interno.gov.it/documenti/ammcom.csv
 - Sheet: https://docs.google.com/spreadsheets/d/1VjVIUNolDgiuz4l465_LBSCPfVEoB2mr1DN5A8LdekM/edit?gid=1542105272#gid=1542105272
-- RAW_DATA: [`ammcom.csv`](../dati/amministazioni-italiane/processing/ammcom.csv)
+- RAW_DATA: [`ammcom.csv`](../../dati/amministazioni-italiane/processing/ammcom.csv)
   - Note: modificato encoding da `ISO8859-1` a `UTF-8`, cambiato separatore di campo da `;` a `,`, inserite colonne `data_elezione_ISO` e `data_entrata_in_carica_ISO` in formato `YYYY-MM-DD`, rimosse righe di intestazione superflue, aggiunta colonna `CODICE_ISTAT` con codice ISTAT del comune.
 
 #### Presidenza Regione, Giunta Regione e Consiglio Regione
@@ -77,7 +77,7 @@ Sono divisi per categoria e sono corredati (ove applicabile) da queste informazi
 - URL: https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica
 - Data_URL: https://dait.interno.gov.it/documenti/ammreg.csv
 - Sheet: https://docs.google.com/spreadsheets/d/1UbTWqyzGroZ8o9ILbGdjFLpVzrT9Uz4IYwVrlsfPIwY/edit?gid=598757995#gid=598757995
-- RAW_DATA: [`ammreg.csv`](../dati/amministazioni-italiane/processing/ammreg.csv)
+- RAW_DATA: [`ammreg.csv`](../../dati/amministazioni-italiane/processing/ammreg.csv)
   - Note: modificato encoding da `ISO8859-1` a `UTF-8`, cambiato separatore di campo da `;` a `,`, inserite colonne `data_elezione_ISO` e `data_entrata_in_carica_ISO` in formato `YYYY-MM-DD`, rimosse righe di intestazione superflue
 
 ### ECONOMIA
