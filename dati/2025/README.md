@@ -65,7 +65,7 @@ I dati sono stati estratti tra gennaio e febbraio 2025.
 - RAW_DATA: [`sindaciincarica.csv`](../../dati/amministazioni-italiane/processing/sindaciincarica.csv)
   - Note: modificato encoding da `ISO8859-1` a `UTF-8`, cambiato separatore di campo da `;` a `,`, inserite colonne `data_elezione_ISO` e `data_entrata_in_carica_ISO` in formato `YYYY-MM-DD`, rimosse righe di intestazione superflue, aggiunta colonna `CODICE_ISTAT` con codice ISTAT del comune.
 
-#### Consiglio e Giunta Comune
+#### Consiglio e Giunta dei Comuni
 
 - Titolo: Amministratori locali e regionali in carica
 - URL: https://dait.interno.gov.it/elezioni/open-data/amministratori-locali-e-regionali-in-carica
