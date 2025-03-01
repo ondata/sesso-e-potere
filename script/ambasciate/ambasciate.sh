@@ -16,11 +16,11 @@ mlr --csv --from "$folder"/../../dati/ambasciate/rawdata/ambasciate.csv clean-wh
 mlr -I -S --csv --from "$folder"/../../dati/ambasciate/processing/ambasciate.csv put '$AMBASCIATORE=sub($AMBASCIATORE,".+:","");$AMBASCIATA=sub($AMBASCIATA,"AMBASCIATA -","")' then clean-whitespace
 
 # cancella con find -delete tutto il contenuto in "$folder"/tmp
-#find "$folder"/tmp -type f -maxdepth 1 -delete
+find "$folder"/tmp -type f -maxdepth 1 -delete
 
 mlr --c2n --from "$folder"/../../dati/ambasciate/processing/ambasciate.csv filter 'is_not_null($AMBASCIATORE)' then cut -f AMBASCIATORE then uniq -a >"$folder"/tmp/ambasciatori.txt
 
-#sesso.sh -f "$folder"/tmp/ambasciatori.txt >"$folder"/tmp/ambasciatori.jsonl
+sesso.sh -f "$folder"/tmp/ambasciatori.txt >"$folder"/tmp/ambasciatori.jsonl
 
 mlr --csv --implicit-csv-header label AMBASCIATORE then cat -n "$folder"/tmp/ambasciatori.txt >"$folder"/tmp/ambasciatori.csv
 
@@ -43,3 +43,5 @@ mv "$folder"/../../dati/ambasciate/processing/tmp.csv "$folder"/../../dati/ambas
 mlr --csv filter 'is_not_null($codice) && is_not_null($sesso)' "$folder"/../../dati/ambasciate/processing/ambasciate.csv >"$folder"/tmp/mappa.csv
 
 mlr -I --csv rename -r '"web-scraper-",' then cut -x -f order "$folder"/../../dati/ambasciate/processing/ambasciate.csv
+
+find "$folder"/tmp -type f -maxdepth 1 -delete
