@@ -32,7 +32,7 @@ Sono divisi per categoria e sono corredati (ove applicabile) da queste informazi
 - Titolo: Dati Camera, persone elette
 - URL: https://dati.camera.it/
 - Sheet: https://docs.google.com/spreadsheets/d/1-2GFVAfeY3cqCyr7qMZDUThHYT8KUUKM-ro7_NAofbM/edit?gid=1358560610#gid=1358560610
-- RAW_DATA: [`camera.csv`](../dati/2025/rawdata/camera.csv)
+- RAW_DATA: [`camera.csv`](./rawdata/camera.csv)
 
 #### Senato - Presidente
 
@@ -44,7 +44,7 @@ Sono divisi per categoria e sono corredati (ove applicabile) da queste informazi
 - Titolo: Dati Senato, persone elette
 - URL: https://dati.senato.it/DatiSenato/browse/6?testo_generico=11&legislatura=19
 - Sheet: https://docs.google.com/spreadsheets/d/1BqzlfWnXdwvzHGULnN6BljyS2BmCyVfTm7dxA095bcw/edit?gid=1626256383#gid=1626256383
-- RAW_DATA: [`senato.csv`](../dati/2025/rawdata/senato.csv)
+- RAW_DATA: [`senato.csv`](./rawdata/senato.csv)
 
 #### Ambasciate
 
@@ -87,27 +87,27 @@ Sono divisi per categoria e sono corredati (ove applicabile) da queste informazi
 - Titolo: Elenco delle partecipazioni dirette del Ministero dell'Economia e delle Finanze
 - URL: https://www.de.mef.gov.it/it/attivita_istituzionali/partecipazioni/elenco_partecipazioni/
 - Sheet: https://docs.google.com/spreadsheets/d/1HsSbItV2itCOhIWEy58L4U_VL3woJ-7TWG2h9HYEQ6w/edit?gid=0#gid=0
-- RAW_DATA: [`mef.csv`](../dati/2025/rawdata/mef.csv)
+- RAW_DATA: [`mef.csv`](./rawdata/mef.csv)
 
 #### Società quotate - CEO e Presidente
 
 - Titolo: Società quotate - CEO e Presidente
 - URL: https://mercati.ilsole24ore.com/azioni/classifiche/capitalizzazione-piazza-affari
 - Sheet: https://docs.google.com/spreadsheets/d/1xomIYXvtBw0ShaXBDtC0Nj-iWgTXXqFSkW5ueKOyBF4/edit?gid=0#gid=0
-- RAW_DATA: [`borsa_milano.csv`](../dati/2025/rawdata/borsa_milano.csv)
+- RAW_DATA: [`borsa_milano.csv`](./rawdata/borsa_milano.csv)
 
 #### Gruppi bancari
 
 - Titolo: Gruppi bancari
 - Sheet: https://docs.google.com/spreadsheets/d/1xomIYXvtBw0ShaXBDtC0Nj-iWgTXXqFSkW5ueKOyBF4/edit?gid=1598042960#gid=1598042960
-- RAW_DATA: [`gruppi_bancari_ita.csv`](../dati/2025/rawdata/gruppi_bancari_ita.csv)
+- RAW_DATA: [`gruppi_bancari_ita.csv`](./rawdata/gruppi_bancari_ita.csv)
 
 #### Gruppi Tech
 
 - Titolo: Gruppi Tech
 - URL: https://www.businessintelligencegroup.it/le-aziende-tecnologiche-ditalia-il-segmento-hi-tech-di-euronext/
 - Sheet: https://docs.google.com/spreadsheets/d/1xomIYXvtBw0ShaXBDtC0Nj-iWgTXXqFSkW5ueKOyBF4/edit?gid=1237166295#gid=1237166295
-- RAW_DATA: [`tech_ita.csv`](../dati/2025/rawdata/tech_ita.csv)
+- RAW_DATA: [`tech_ita.csv`](./rawdata/tech_ita.csv)
 
 ### MEDIA
 
@@ -116,20 +116,20 @@ Sono divisi per categoria e sono corredati (ove applicabile) da queste informazi
 - Titolo: Quotidiani per tiratura
 - URL: https://www.agcom.it/sites/default/files/media/allegato/2024/Pubblicazione_Report_Tirature_2023%20%281%29%20copia.pdf
 - Sheet: https://docs.google.com/spreadsheets/d/1G4j0CDqW-Hpgg7RzHJ5husdxLW4RSIMW8_Wnl0PFLgg/edit?gid=0#gid=0
-- RAW_DATA: [`quotidiani_x_tiratura.csv`](../dati/2025/rawdata/quotidiani_x_tiratura.csv)
+- RAW_DATA: [`quotidiani_x_tiratura.csv`](./rawdata/quotidiani_x_tiratura.csv)
 
 #### TG
 
 - Titolo: Direzione telegiornali
 - Sheet: https://docs.google.com/spreadsheets/d/1G4j0CDqW-Hpgg7RzHJ5husdxLW4RSIMW8_Wnl0PFLgg/edit?gid=501240274#gid=501240274
-- RAW_DATA: [`tg.csv`](../dati/2025/rawdata/tg.csv)
+- RAW_DATA: [`tg.csv`](./rawdata/tg.csv)
 
 #### Agenzie di stampa
 
 - Titolo: Agenzie di stampa
 - URL: https://it.wikipedia.org/wiki/Agenzia_di_stampa
 - Sheet: https://docs.google.com/spreadsheets/d/1G4j0CDqW-Hpgg7RzHJ5husdxLW4RSIMW8_Wnl0PFLgg/edit?gid=773087133#gid=773087133
-- RAW_DATA: [`agenzie_stampa.csv`](../dati/2025/rawdata/agenzie_stampa.csv)
+- RAW_DATA: [`agenzie_stampa.csv`](./rawdata/agenzie_stampa.csv)
 
 ### SOCIETÀ
 
@@ -138,21 +138,21 @@ Sono divisi per categoria e sono corredati (ove applicabile) da queste informazi
 - Titolo: Elenco Rettori
 - URL: https://www.crui.it/atenei-e-rettori-crui/elenco-rettori.html
 - Sheet: https://docs.google.com/spreadsheets/d/1_O5MB3ego_748hL9ejWVzgWve85ubjchbPWmd9gyXnM/edit?gid=0#gid=0
-- RAW_DATA: [`universita.csv`](../dati/2025/rawdata/universita.csv)
+- RAW_DATA: [`universita.csv`](./rawdata/universita.csv)
 
 #### Enti di ricerca
 
 - Titolo: Enti di ricerca pubblici
 - URL: https://www.mur.gov.it/it/aree-tematiche/ricerca/il-sistema-della-ricerca/enti-di-ricerca-pubblici
 - Sheet: https://docs.google.com/spreadsheets/d/1xvWbU9o1-KnG-O4q7peJ3ZnUROD-iOx1DR6qxZsB5Z4/edit?gid=0#gid=0
-- RAW_DATA: [`enti_di_ricerca.csv`](../dati/2025/rawdata/enti_di_ricerca.csv)
+- RAW_DATA: [`enti_di_ricerca.csv`](./rawdata/enti_di_ricerca.csv)
 
 #### Autorità indipendenti
 
 - Titolo: Autorità indipendenti
 - URL: https://www.senato.it/3222
 - Sheet: https://docs.google.com/spreadsheets/d/1RdfZo_4PyewMiGG_JN8x1zatO-UsYyv2YayhMoJ7WaQ/edit?gid=0#gid=0
-- RAW_DATA: [`autorità_indipendenti.csv`](../dati/2025/rawdata/autorità_indipendenti.csv)
+- RAW_DATA: [`autorità_indipendenti.csv`](./rawdata/autorità_indipendenti.csv)
 
 ### CONTESTO
 
