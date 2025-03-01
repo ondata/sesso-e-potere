@@ -1,0 +1,51 @@
+num,nome,capitalizzazione,cap_al_3001,ceo,link,note,genere_ceo,presidente_cda,genere_presidente_cda
+1,Ferrari,79434,81145,Benedetto Vigna,https://www.ferrari.com/en-EN/corporate/executive-officers,,M,John Elkan,M
+2,Intesa Sanpaolo,63277,73376,Carlo Messina,https://group.intesasanpaolo.com/it/chi-siamo/struttura-organizzativa/biografie-top-manager,,M,Gian Maria Gros-Pietro,M
+3,Enel,68196,68346,Flavio Cattaneo,https://www.enel.com/it/azienda/chi-siamo/presidente-management-team,,M,Paolo Scaroni,M
+4,Unicredit,58549,66223,Andrea Orcel,https://www.unicreditgroup.eu/it/governance/management.html,,M,Pietro Carlo Padoan,M
+5,Eni,45181,46216,Claudio Descalzi,https://www.eni.com/en-IT/company/management.html,,M,Giuseppe Zafarana,M
+6,Generali,42463,45849,Philippe Donnet,https://www.generali.com/it/governance/board-of-directors,,M,Andrea Sironi,M
+7,Stellantis,36345,36743,Carlos Tavares,https://www.stellantis.com/en/news/press-releases/2024/december/stellantis-organizational-announcement,"Appena dimesso, interim executive committee 1 donna su 9 membri",M,John Elkan,M
+8,STMicroelectronics,21725,22404,Jean-Marc Chery,https://investors.st.com/governance/leadership,,M,Nicolas Dufourcq,M
+9,Tenaris,21066,22182,Paolo Rocca,https://www.tenaris.com/en/about-us/leadership,,M,same,M
+10,Prysmian,18370,20892,Massimo Battaini,https://www.prysmian.com/en/company/governance/corporate-bodies,,M,Francesco Gori,M
+11,Poste Italiane,17330,18864,Matteo Del Fante,https://www.posteitaliane.it/en/our-managers.html,,M,Silvia Maria Rovere,F
+12,Leonardo,14427,16929,Roberto Cingolani,https://www.leonardo.com/en/about/management,,M,Stefano Pontecorvo,M
+13,Moncler,12914,16078,Remo Ruffini,https://www.monclergroup.com/it/governance/consiglio-di-amministrazione,,M,same,M
+14,Terna,16083,15674,Giuseppina Di Foggia,https://www.terna.it/it/chi-siamo/manager,,F,Igor de Biasio,M
+15,Snam,14785,14588,Stefano Venier,https://www.snam.it/it/noi-snam/chi-siamo/management-e-struttura-societaria.html,,M,Monica de Virgiliis,F
+16,Mediobanca,11522,12635,Alberto Nagel,https://www.mediobanca.com/it/corporate-governance/mediobanca-leadership-team.html,,M,Renato Pagliaro,M
+17,Banco BPM,10559,12544,Giuseppe Castagna,https://gruppo.bancobpm.it/corporate-governance/struttura-organizzativa/,,M,Massimo Tononi,M
+18,Recordati,10840,11629,Robert Koremans,https://recordati.com/it/company-leadership-it/,,M,Andrea Recordati,M
+19,FinecoBank,9079,11024,Alessandro Foti,https://about.finecobank.com/it/management/,,M,Marco Mangiagalli,M
+20,Banca Mediolanum,8076,9560,Massimo Antonio Doris,https://www.bancamediolanum.it/corporate-governance/organi-sociali,,M,Giovanni Pirovano,M
+21,Inwit,9056,9415,Diego Galli,https://www.inwit.it/en/company/leadership-team/,,M,Oscar Cicchetti,M
+22,Bper Banca,8043,9240,Gianni Franco Papa,https://group.bper.it/gruppo-bper/top-management,,M,Fabio Cerchiai,M
+23,Unipol,8091,9169,Matteo Laterza,https://www.unipol.com/it/governance/organi-societari/consiglio-di-amministrazione,,M,Carlo Cimbri,M
+24,Monte Paschi Si,7476,8758,Luigi Lovaglio,https://www.gruppomps.it/corporate-governance/management/management.html,,M,Nicola Maione,M
+25,B. Cucinelli,6356,8068,Riccardo Stefanelli,https://investor.brunellocucinelli.com/it/governo-societario/consiglio-di-amministrazione,,M,Brunello Cucinelli,M
+26,Buzzi,7670,7532,Pietro Buzzi,https://www.buzzi.com/board-of-directors,,M,Veronica Buzzi,F
+27,A2A,6648,7086,Renato Mazzoncini,https://www.gruppoa2a.it/it/chi-siamo/nostro-management,,M,Roberto Tasca,M
+28,Campari,6975,6729,Simon Hunt,https://www.camparigroup.com/it/page/il-gruppo/management,,M,LucaGaravoglia,M
+29,Nexi,6623,6002,Paolo Bertoluzzo,https://www.nexi.it/content/nexi/en/about-us/brand/top-management.html?srsltid=AfmBOoo2HOBl744k6IhtL8JJDVPhD4x3PbLj7tDH5NVeig1_7cimQQWE,,M,Michaela Castelli,F
+30,Amplifon,5267,5943,Enrico Vita,https://corporate.amplifon.com/it/identita/il-management,,M,Susan Carol Holland,F
+31,Diasorin,5991,5933,Carlo Rosa,https://int.diasorin.com/it/azienda/chi-siamo/top-management,,M,Michele Denegri,M
+32,Telecom Italia ( ex Olivetti ),5209,5842,Pietro Labriola,https://www.gruppotim.it/it/gruppo/governance/consiglio-di-amministrazione/composizione.html,,M,Alberta Figari,F
+33,Reply,5641,5818,Tatiana Rizzante,https://www.reply.com/it/investors/board-of-directors-and-other-corporate-bodies,,F,Mario Rizzante,M
+34,Pirelli & C.,5025,5783,Andrea Casaluci,https://corporate.pirelli.com/corporate/it-it/governance/consiglio-di-amministrazione-e-organi-sociali/consiglio-di-amministrazione,,M,Jiao Jian,M
+35,B. Generali,5101,5743,Gian Maria Mossa,https://www.bancagenerali.com/governance/management,,M,Antonio Cangeri,M
+36,Hera,5230,5179,Orazio Iacono,https://www.gruppohera.it/gruppo/chi-siamo/struttura-organizzativa/i-nostri-manager,,M,Cristian Fabbri,M
+37,Saipem,4857,4928,Alessandro Puliti,https://www.saipem.com/it/chi-siamo/top-management,,M,Elisabetta Serafin,F
+38,Interpump,4699,4895,Fabio Marasi,https://www.interpumpgroup.it/en/governance/board-directors-and-committees,,M,"Fulvio Montipò",M
+39,"De' Longhi",4218,4848,"Fabio de' Longhi",https://www.delonghigroup.com/it/governance/management,,M,"Giuseppe de' Longhi",M
+40,Italgas,4578,4548,Paolo Gallo,https://www.italgas.it/investitori/governance/consiglio-di-amministrazione/,,M,Benedetta Navarra,F
+41,Technoprobe,3839,4274,Stefano Felici,https://www.technoprobe.com/it/company/governance/organi-sociali,,M,Cristiano Alessandro Crippa,M
+42,B.P. Sondrio,3222,3942,Mario Alberto Pedranzini,https://istituzionale.popso.it/it/profilo/top-management,,M,Francesco Venosta,M
+43,Acea,3775,3938,Fabrizio Palermo,https://www.gruppo.acea.it/governance/consiglio-amministrazione,,M,Barbara Marinali,F
+44,Credem,3422,3902,Angelo Campani,https://www.credem.it/content/credem/en/credem-group/press/profili-top-management.html,,M,Lucio Igino Zanon di Valgiurata,M
+45,Azimut H.,3354,3675,Gabriele Blei,https://www.azimut.it/governance,,M,Pietro Giuliani,M
+46,Lottomatica Group,3153,3514,Guglielmo Angelozzi,https://lottomaticagroup.com/it-it/home/governance/organi-sociali,,M,Andrea Moneta,M
+47,Sol,3311,3477,Aldo Fumagalli Romario,https://www.solgroup.com/it/governance/organi-sociali,,M,same,M
+48,Maire,,3165,Alessandro Bernini,https://www.groupmaire.com/it/chi-siamo/,,M,Fabrizio Di Amato,M
+49,Webuild (Salini Impregilo),2667,3094,Pietro Salini,https://www.webuildgroup.com/en/governance/governance-system/management/,,M,Gian Luca Gregori,M
+50,Brembo,2912,2958,Daniele Schillaci,https://www.brembogroup.com/it/investitori/dati-finanziari/consigli-di-amministrazione-e-comitati,,M,Matteo Tiraboschi,M
