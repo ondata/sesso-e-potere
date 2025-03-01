@@ -9,6 +9,8 @@ I dati sono divisi in categorie e corredati (ove applicabile/possibile) a queste
 - `Sheet`, ovvero il link al foglio di lavoro Google in cui è presente una copia dei dati;
 - `RAW_DATA`, ovvero un file CSV reso disponibile per elaborazioni "grezze" dei dati. Sono file CSV con separatore di campo `,` e codifica `UTF-8`, che abbiamo pulito e normalizzato. Abbiamo creato anche una [versione *machine to machine*](https://github.com/ondata/sesso-e-potere/blob/main/dati/2025/index.yaml) dell'indice di questi `CSV`.
 
+I dati sono stati estratti tra gennaio e febbraio 2025.
+
 ## Dati
 
 ### POLITICA
