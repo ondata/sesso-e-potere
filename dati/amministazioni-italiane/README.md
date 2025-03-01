@@ -29,7 +29,3 @@ Queste le modifiche fatte:
 - corretta sintassi di celle con `"` all'interno (vedi [note](note.md#i-file-csv-non-hanno-una-sintassi-corretta));
 - rimosse righe di intestazioni superflue;
 - per i file che contengono le colonne `data_elezione` e `data_entrata_in_carica`, sono state aggiunte le colonne `data_elezione_ISO` e `data_entrata_in_carica_ISO` in formato `YYYY-MM-DD`;
-
-# Note
-
-Qui un file con delle [note](note.md) sui dati.
