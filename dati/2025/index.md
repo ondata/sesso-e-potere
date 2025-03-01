@@ -1,8 +1,8 @@
 # Introduzione
 
-In questa pagina trovi l'elenco dei principali dati che abbiamo usato per l'**edizione 2025** di **SESSO È POTERE**.
+In questa pagina trovi l'elenco dei **principali dati** che abbiamo usato per l'**edizione 2025** di **SESSO È POTERE**.  È un'inchiesta realizzata da [**info.nodes**](https://www.infonodes.org/) in collaborazione con **onData**, che analizza le disuguaglianze di genere nella rappresentanza e nella gestione del potere in Italia.
 
-Sono divisi per categoria e sono corredati (ove applicabile) da queste informazioni:
+I dati sono divisi in categorie e corredati (ove applicabile/possibile) a queste informazioni:
 
 - `Titolo`, ovvero il titolo della fonte da cui sono stati estratti i dati;
 - `URL`, ovvero il link alla fonte da cui sono stati estratti i dati;
