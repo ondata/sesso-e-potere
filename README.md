@@ -8,7 +8,6 @@ Qui le [informazioni sui dati](dati/2025/README.md) a supporto del numero del **
 
 ## Le inchieste
 
+- [2021](https://www.infonodes.org/sesso-%C3%A8-potere#&gid=1908836886&pid=3)
 - [2022](https://www.infonodes.org/sessoepotere22)
 - [2023](https://infonodes.org/sesso-%C3%A8-potere#&gid=1908836886&pid=1)
-- 2024
-- 2025
