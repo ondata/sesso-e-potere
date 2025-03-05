@@ -6,7 +6,7 @@ Qui le [informazioni sui dati](dati/2025/README.md) a supporto del [numero del *
 
 [![](immagini/sesso_e_potere_2025_squared.png)](report/2025_sesso_è_potere.pdf)
 
-## Le inchieste
+## Le inchieste precedenti
 
 - [2021](https://www.infonodes.org/sesso-%C3%A8-potere#&gid=1908836886&pid=3)
 - [2022](https://www.infonodes.org/sessoepotere22)
